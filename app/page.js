@@ -5,9 +5,8 @@ export default function Home() {
     <main>
       <h1>Company name - Welcome message / slogan</h1>
       <p>General information</p>
-      <Link href="/matcha">Matcha</Link>
+      <Link href="/products">Products</Link>
       <br />
-      <Link href="/matchaset">Matcha Set</Link>
       <div>Sign up input field</div>
     </main>
   );
