@@ -1,10 +1,12 @@
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { getProduct } from '../../../database/products';
+import ItemNumberForm from './ItemNumberForm';
 
 export function generateMetadata({ params }) {
   const singleProduct = getProduct(Number(params.productId));
-
+  const itemNumber = getCookie('itemNumbers');
+  const parsedItemNumber = JSON.parse(itemNumber);
   return {
     title: singleProduct ? singleProduct.slug : '',
   };
@@ -33,6 +35,8 @@ export default function ProductPage(props) {
         <li>{singleProduct.price}</li>
         <li>{singleProduct.weight}</li>
       </ul>
+      <ItemNumberForm />
+      <div>{parsedItemNumber}</div>
     </div>
   );
 }
