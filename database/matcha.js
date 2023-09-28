@@ -10,6 +10,6 @@ const matchaSelection = [
   },
 ];
 
-export function getMatchaSelection() {
-  return matchaSelection;
+export function getProducts() {
+  return;
 }
