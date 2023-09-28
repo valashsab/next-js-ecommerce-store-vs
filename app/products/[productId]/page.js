@@ -2,6 +2,14 @@ import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { getProduct } from '../../../database/products';
 
+export function generateMetadata({ params }) {
+  const singleProduct = getProduct(Number(params.productId));
+
+  return {
+    title: singleProduct ? singleProduct.slug : '',
+  };
+}
+
 export default function ProductPage(props) {
   // it's a string therefore need to convert to a number
   const singleProduct = getProduct(Number(props.params.productId));

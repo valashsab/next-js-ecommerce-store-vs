@@ -4,14 +4,14 @@ const products = [
     type: 'izumi',
     weight: '30g',
     price: 22,
-    slug: 'matchaizumi',
+    slug: 'Matcha Izumi',
   },
   {
     id: 2,
     type: 'akashi',
     weight: '30g',
     price: 32,
-    slug: 'matchaakashi',
+    slug: 'Matcha Akashi',
   },
 
   {
@@ -19,14 +19,14 @@ const products = [
     type: 'horai',
     weight: '30g',
     price: 42,
-    slug: 'matchahorai',
+    slug: 'Matcha Horai',
   },
   {
     id: 4,
     type: 'tsuki',
     weight: '50g',
     price: 13,
-    slug: 'matchatsuki',
+    slug: 'Matcha Tsuki',
   },
 ];
 
