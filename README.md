@@ -1,1 +1,1 @@
-This application enables users to purchase premium matcha products and accessories online.
+This application is an e-commerce store offering premium matcha powder and traditional matcha kit.

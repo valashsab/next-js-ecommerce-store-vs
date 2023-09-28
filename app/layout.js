@@ -28,7 +28,7 @@ export default function RootLayout({ children }) {
             <Link href="/privacypolicy">Privacy Policy</Link>
             <Link href="/termsandconditions">Terms & Conditions</Link>
             <Link href="/cookiespolicy">Cookies Policy</Link>
-            <Link href="/legaldisclosure">Legal Disclosure</Link>
+            <Link href="/imprint">Imprint</Link>
           </footer>
         </div>
       </body>
