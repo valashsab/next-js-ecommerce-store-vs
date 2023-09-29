@@ -1,29 +1,15 @@
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { getProduct } from '../../../database/products';
-import { getCookie } from '../../../util/cookies';
-import productItemNumbersCookie from './actions';
 import ItemNumberForm from './ItemNumberForm';
 
-const singleProduct = getProduct(Number(params.productId));
-const itemNumber = getCookie('itemNumbers');
-const parsedItemNumber = JSON.parse(itemNumber);
-return {
-
-
 export default function ProductPage(props) {
+  // it's a string therefore need to convert to a number
+  const singleProduct = getProduct(Number(props.params.productId));
 
-  const product = getProductById(Number(props.params.productId));
-  const productItemNumbersCookie = getCookie('productItemNumbers');
-
-  const productItemNumbers = !productItemNumbersCookie
-    ? []
-    : parseJson(productItemNumbersCookie);
-
-  const productItemNumberToDisplay = productItemNumber.find((productItemNumber) => {
-    return productItemNumber.id === product.id;
-  });
-
+  if (!singleProduct) {
+    return notFound();
+  }
 
   return (
     <div>
@@ -41,7 +27,6 @@ export default function ProductPage(props) {
         <li>{singleProduct.weight}</li>
       </ul>
       <ItemNumberForm />
-      <div>{parsedItemNumber}</div>
     </div>
   );
 }
