@@ -17,21 +17,40 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <div>
-          <nav>
-            <Link href="/">Home</Link>
-            <Link href="/products">Products</Link>
-            <Link href="/about">About us</Link>
-            <Link href="/cart">Cart</Link>
+          <nav className="nav">
+            <ul>
+              <li className="navHome">
+                <Link href="/">Home</Link>
+              </li>
+              <li className="navProductsAbout">
+                <Link href="/products">Products</Link>
+              </li>
+              <li>
+                <Link href="/about">About us</Link>
+              </li>
+              <li className="navCart">
+                <Link href="/cart">Cart</Link>
+              </li>
+            </ul>
           </nav>
         </div>
-
         {children}
         <div>
-          <footer>
-            <Link href="/privacypolicy">Privacy Policy</Link>
-            <Link href="/termsandconditions">Terms & Conditions</Link>
-            <Link href="/cookiespolicy">Cookies Policy</Link>
-            <Link href="/imprint">Imprint</Link>
+          <footer className="footer">
+            <ul>
+              <li>
+                <Link href="/privacypolicy">Privacy Policy</Link>
+              </li>
+              <li>
+                <Link href="/termsandconditions">Terms & Conditions</Link>
+              </li>
+              <li>
+                <Link href="/cookiespolicy">Cookies Policy</Link>
+              </li>
+              <li>
+                <Link href="/imprint">Imprint</Link>
+              </li>
+            </ul>
           </footer>
         </div>
       </body>
