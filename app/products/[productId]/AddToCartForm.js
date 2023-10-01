@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { setOrUpdateQuantity } from './actions';
 
 export default function AddToCartForm(props) {
-  const [itemNumber, setItemNumber] = useState('');
+  const [itemNumber, setItemNumber] = useState(1);
 
   return (
     <form>

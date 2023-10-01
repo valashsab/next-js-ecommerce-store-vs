@@ -24,16 +24,24 @@ export default function RootLayout({ children }) {
           <nav className="nav">
             <ul>
               <li className="navHome">
-                <Link href="/">Home</Link>
+                <Link className="headerLinks" href="/">
+                  Home
+                </Link>
               </li>
               <li className="navProductsAbout">
-                <Link href="/products">Products</Link>
+                <Link className="headerLinks" href="/products">
+                  Products
+                </Link>
               </li>
               <li>
-                <Link href="/about">About us</Link>
+                <Link className="headerLinks" href="/about">
+                  About us
+                </Link>
               </li>
               <li className="navCart">
-                <Link href="/cart">Cart</Link>
+                <Link className="headerLinks" href="/cart">
+                  Cart
+                </Link>
               </li>
             </ul>
           </nav>
@@ -43,16 +51,24 @@ export default function RootLayout({ children }) {
           <footer className="footer">
             <ul>
               <li>
-                <Link href="/privacypolicy">Privacy Policy</Link>
+                <Link className="footerLinks" href="/privacypolicy">
+                  Privacy Policy
+                </Link>
               </li>
               <li>
-                <Link href="/termsandconditions">Terms & Conditions</Link>
+                <Link className="footerLinks" href="/termsandconditions">
+                  Terms & Conditions
+                </Link>
               </li>
               <li>
-                <Link href="/cookiespolicy">Cookies Policy</Link>
+                <Link className="footerLinks" href="/cookiespolicy">
+                  Cookies Policy
+                </Link>
               </li>
               <li>
-                <Link href="/imprint">Imprint</Link>
+                <Link className="footerLinks" href="/imprint">
+                  Imprint
+                </Link>
               </li>
             </ul>
           </footer>

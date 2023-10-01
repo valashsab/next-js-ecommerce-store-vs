@@ -1,3 +1,4 @@
+import './globals.scss';
 import Image from 'next/image';
 import Link from 'next/link';
 import matchapowder from '../public/images/matchapowder.jpg';
@@ -6,7 +7,9 @@ export default function Home() {
   return (
     <main className="mainPage">
       <h1>MATCHA</h1>
-      <Image src={matchapowder} alt="matcha powder" className="imageMainPage" />
+      <div className="mainImg">
+        <Image src={matchapowder} alt="matcha powder" />
+      </div>
       <section className="generalInfo">
         <p>General information</p>
       </section>
