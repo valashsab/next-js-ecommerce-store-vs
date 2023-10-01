@@ -1,8 +1,12 @@
 import './globals.scss';
-import { Inter } from 'next/font/google';
+import { Inconsolata } from 'next/font/google';
 import Link from 'next/link';
 
-const inter = Inter({ subsets: ['latin'] });
+const inconsolata = Inconsolata({
+  weight: ['200', '400', '600'],
+  subsets: ['latin'],
+  display: 'swap',
+});
 
 export const metadata = {
   title: {
@@ -15,7 +19,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={inconsolata.className}>
         <div>
           <nav className="nav">
             <ul>

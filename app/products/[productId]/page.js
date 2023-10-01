@@ -1,12 +1,26 @@
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import { getProduct } from '../../../database/products';
-import ItemNumberForm from './ItemNumberForm';
+import { getProductById } from '../../../database/products';
+import { getCookie } from '../../../util/cookies';
+import { parseJson } from '../../../util/json';
+import AddToCartForm from './AddToCartForm';
 
-export default function ProductPage(props) {
+export default function SingleProductPage(props) {
   // it's a string therefore need to convert to a number
-  const singleProduct = getProduct(Number(props.params.productId));
+  const singleProduct = getProductById(Number(props.params.productId));
+  //
+  const quantityCartCookie = getCookie('quantityCart');
 
+  const quantityCarts = !quantityCartCookie
+    ? []
+    : parseJson(quantityCartCookie);
+
+  const quantityCartsToDisplay = quantityCarts.find((quantity) => {
+    return quantity.id === singleProduct.id;
+  });
+  //
+
+  // error if page is not found
   if (!singleProduct) {
     return notFound();
   }
@@ -26,7 +40,8 @@ export default function ProductPage(props) {
         <li>{singleProduct.price}</li>
         <li>{singleProduct.weight}</li>
       </ul>
-      <ItemNumberForm />
+      <div>{quantityCartsToDisplay?.itemNumber}</div>
+      <AddToCartForm singleProductId={singleProduct.id} />
     </div>
   );
 }

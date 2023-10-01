@@ -1,8 +1,8 @@
 'use client';
 import { useState } from 'react';
-import { createOrUpdateItemNumber } from './actions';
+import { setOrUpdateQuantity } from './actions';
 
-export default function ItemNumberForm(props) {
+export default function AddToCartForm(props) {
   const [itemNumber, setItemNumber] = useState('');
 
   return (
@@ -10,16 +10,19 @@ export default function ItemNumberForm(props) {
       <input
         type="number"
         id="quantity"
+        min="0"
         value={itemNumber}
         onChange={(event) => setItemNumber(event.currentTarget.value)}
       />
       <button
         formAction={async () =>
-          await createOrUpdateItemNumber(props.productId, itemNumber)
+          await setOrUpdateQuantity(props.productId, itemNumber)
         }
       >
         Add to cart
       </button>
+      <button onClick={() => setItemNumber(itemNumber + 1)}>+</button>
+      <button onClick={() => setItemNumber(itemNumber - 1)}>-</button>
     </form>
   );
 }

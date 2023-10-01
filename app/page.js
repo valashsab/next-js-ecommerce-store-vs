@@ -4,13 +4,20 @@ import matchapowder from '../public/images/matchapowder.jpg';
 
 export default function Home() {
   return (
-    <main>
-      <h1>Company name - Welcome message / slogan</h1>
-      <Image src={matchapowder} alt="matcha powder" />
-      <p>General information</p>
-      <Link href="/products">Products</Link>
+    <main className="mainPage">
+      <h1>MATCHA</h1>
+      <Image src={matchapowder} alt="matcha powder" className="imageMainPage" />
+      <section className="generalInfo">
+        <p>General information</p>
+      </section>
+      <section className="productsLink">
+        {' '}
+        <Link href="/products">Products</Link>
+      </section>
       <br />
-      <div>Sign up input field</div>
+      <section className="signUp">
+        <div>Sign up input field</div>
+      </section>
     </main>
   );
 }
