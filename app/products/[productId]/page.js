@@ -25,17 +25,17 @@ export default function SingleProductPage(props) {
 
   return (
     <div>
-      <h1>Matcha premium selection</h1>
-      <h2>{singleProduct.type}</h2>
+      <h1>{singleProduct.type}</h1>
 
       <Image
+        data-test-id="product-image"
         src={`/images/${singleProduct.type}.png`}
         alt={singleProduct.type}
         width={200}
         height={200}
       />
       <ul>
-        <li>{singleProduct.price}</li>
+        <li data-test-id="product-price">{singleProduct.price}</li>
         <li>{singleProduct.weight}</li>
       </ul>
       <div>{productToDisplay?.itemNumber}</div>

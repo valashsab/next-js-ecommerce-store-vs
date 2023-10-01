@@ -1,10 +1,10 @@
 // Nav
-.nav {
+nav {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  text-align: left;
+  // text-align: left;
 }
 
 .headerLinks {
@@ -18,28 +18,31 @@ nav ul {
   text-decoration: none;
   list-style-type: none;
 }
-.nav li {
-  // text-decoration: none;
-  display: flex;
-}
 
 .navHome {
   background-color: #b8d8be;
   border-radius: 10px;
 }
 
-// Footer - footer fixieren !!!
+// Footer
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  // text-align: left;
+  position: fixed;
+  bottom: 0;
+}
 
-// .footer {
-//   position: fixed;
-
-.footer ul {
+footer ul {
   display: flex;
   flex-direction: row;
   gap: 20px;
   text-decoration: none;
   list-style-type: none;
 }
+
 .footerLinks {
   text-decoration: none;
 }
@@ -48,13 +51,8 @@ nav ul {
 body {
   background-color: #f6f1e9;
   font-family: 'Dosis', sans-serif;
-  margin: 50px 100px;
+  margin: 100px 100px;
   padding: 0px;
-}
-
-// main page
-
-.mainPage {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -93,3 +91,10 @@ h1 {
 // COLORS:
 // fabrliche mint Akzente: #b8d8be
 // background-color: #f6f1e9
+
+.testLayout {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+}

@@ -5,13 +5,13 @@ import matchapowder from '../public/images/matchapowder.jpg';
 
 export default function Home() {
   return (
-    <main className="mainPage">
+    <main>
       <h1>MATCHA</h1>
       <div className="mainImg">
         <Image src={matchapowder} alt="matcha powder" />
       </div>
       <section className="generalInfo">
-        <p>General information</p>
+        <p>PLACEHOLDER: General information</p>
       </section>
       <section className="productsLink">
         {' '}
@@ -19,7 +19,7 @@ export default function Home() {
       </section>
       <br />
       <section className="signUp">
-        <div>Sign up input field</div>
+        <div>PLACEHOLDER: Sign up input field</div>
       </section>
     </main>
   );
