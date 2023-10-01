@@ -8,15 +8,13 @@ import AddToCartForm from './AddToCartForm';
 export default function SingleProductPage(props) {
   // it's a string therefore need to convert to a number
   const singleProduct = getProductById(Number(props.params.productId));
-  //
-  const quantityCartCookie = getCookie('quantityCart');
+  // cookies
+  const productsCookie = getCookie('products');
 
-  const quantityCarts = !quantityCartCookie
-    ? []
-    : parseJson(quantityCartCookie);
+  const products = !productsCookie ? [] : parseJson(productsCookie);
 
-  const quantityCartsToDisplay = quantityCarts.find((quantity) => {
-    return quantity.id === singleProduct.id;
+  const productToDisplay = products.find((product) => {
+    return product.id === singleProduct.id;
   });
   //
 
@@ -40,8 +38,8 @@ export default function SingleProductPage(props) {
         <li>{singleProduct.price}</li>
         <li>{singleProduct.weight}</li>
       </ul>
-      <div>{quantityCartsToDisplay?.itemNumber}</div>
-      <AddToCartForm singleProductId={singleProduct.id} />
+      <div>{productToDisplay?.itemNumber}</div>
+      <AddToCartForm productId={singleProduct.id} />
     </div>
   );
 }

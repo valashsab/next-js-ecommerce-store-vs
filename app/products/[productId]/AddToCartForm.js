@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { setOrUpdateQuantity } from './actions';
 
 export default function AddToCartForm(props) {
-  const [itemNumber, setItemNumber] = useState(1);
+  const [quantity, setQuantity] = useState(1);
 
   return (
     <form>
@@ -11,18 +11,18 @@ export default function AddToCartForm(props) {
         type="number"
         id="quantity"
         min="0"
-        value={itemNumber}
-        onChange={(event) => setItemNumber(event.currentTarget.value)}
+        value={quantity}
+        onChange={(event) => setQuantity(event.currentTarget.value)}
       />
       <button
         formAction={async () =>
-          await setOrUpdateQuantity(props.productId, itemNumber)
+          await setOrUpdateQuantity(props.productId, quantity)
         }
       >
         Add to cart
       </button>
-      <button onClick={() => setItemNumber(itemNumber + 1)}>+</button>
-      <button onClick={() => setItemNumber(itemNumber - 1)}>-</button>
+      <button onClick={() => setQuantity(quantity + 1)}>+</button>
+      <button onClick={() => setQuantity(quantity - 1)}>-</button>
     </form>
   );
 }
