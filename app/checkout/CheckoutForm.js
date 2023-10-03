@@ -26,7 +26,7 @@ export default function CheckOut() {
             <input data-test-id="checkout-city" required />
             <br />
 
-            <label htmlFor="postalCode">Postalcode</label>
+            <label htmlFor="postalCode">Postal code</label>
             <input data-test-id="checkout-postal-code" required />
             <br />
 

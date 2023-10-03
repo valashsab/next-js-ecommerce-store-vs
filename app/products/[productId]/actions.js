@@ -9,7 +9,7 @@ export async function setOrUpdateQuantity(productId, quantity) {
   // 2. parse the cookie value
 
   // !productsCookie <=> productsCookie === undefined  // save parsed cookie or save empty []
-  const products = !productsCookie
+  const productsInput = !productsCookie
     ? // Case A: cookie is undefined
       // we need to create a new cookie with an empty array
       []
@@ -17,7 +17,7 @@ export async function setOrUpdateQuantity(productId, quantity) {
 
   // 3. we update the cookie value
   // We get the the object for the products on cookies or undefined
-  const productToUpdate = products.find((product) => {
+  const productToUpdate = productsInput.find((product) => {
     return product.id === productId;
   });
   // Case B: cookie is defined and fruit id already exists!
@@ -26,12 +26,12 @@ export async function setOrUpdateQuantity(productId, quantity) {
     productToUpdate.quantity = quantity;
   } else {
     // Case C: cookie is defined and fruit id doesn't exist!
-    products.push({
+    productsInput.push({
       id: productId,
       quantity: quantity,
     });
   }
 
   // 4. we overwrite the cookie
-  await cookies().set('products', JSON.stringify(products));
+  await cookies().set('products', JSON.stringify(productsInput));
 }

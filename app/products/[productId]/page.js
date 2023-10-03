@@ -16,6 +16,7 @@ export default function SingleProductPage(props) {
   const productToDisplay = products.find((product) => {
     return product.id === singleProduct.id;
   });
+  console.log(productToDisplay);
   //
 
   // error if page is not found
