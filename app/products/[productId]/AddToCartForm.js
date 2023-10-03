@@ -1,18 +1,10 @@
 'use client';
+
 import { useState } from 'react';
 import { setOrUpdateQuantity } from './actions';
 
 export default function AddToCartForm(props) {
-  const [quantity, setQuantity] = useState('');
-  const [counter, setCounter] = useState('');
-
-  const increaseCounter = () => {
-    setCounter(counter + 1);
-  };
-
-  const decreaseCounter = () => {
-    setCounter(counter - 1);
-  };
+  const [quantity, setQuantity] = useState(1);
 
   return (
     <form>
@@ -20,12 +12,14 @@ export default function AddToCartForm(props) {
         data-test-id="product-quantity"
         type="number"
         id="quantity"
-        min="0" // or does it have to be 1 according to instructions?
+        min="1"
+        step="1" // incremental step when using the arrows
         value={quantity}
-        onChange={(event) => setQuantity(event.currentTarget.value)}
+        onChange={(event) => setQuantity(parseInt(event.currentTarget.value))}
       />
-      <button onClick={increaseCounter}>+</button>
-      <button onClick={decreaseCounter}>-</button>
+
+      {/* <button onClick={handleIncrease}>+</button>
+      <button onClick={handleDecrease}>-</button> */}
       <button
         data-test-id="product-add-to-cart"
         formAction={async () =>

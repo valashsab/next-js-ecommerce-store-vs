@@ -45,8 +45,8 @@ export default function RootLayout({ children }) {
           </ul>
         </nav>
         {children}
-        <footer>
-          <ul>
+        <footer className="footer">
+          <ul className="footerList">
             <li>
               <Link className="footerLinks" href="/privacypolicy">
                 Privacy Policy

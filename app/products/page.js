@@ -22,7 +22,6 @@ export default function ProductsPage() {
             </div>
           );
         })}
-        ;
       </span>
     </div>
   );

@@ -4,7 +4,6 @@ nav {
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  // text-align: left;
 }
 
 .headerLinks {
@@ -30,17 +29,22 @@ footer {
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  // text-align: left;
   position: fixed;
   bottom: 0;
 }
 
 footer ul {
   display: flex;
+  justify-content: center;
   flex-direction: row;
   gap: 20px;
   text-decoration: none;
   list-style-type: none;
+}
+
+footer ul li {
+  display: flex;
+  justify-content: center;
 }
 
 .footerLinks {
@@ -91,10 +95,3 @@ h1 {
 // COLORS:
 // fabrliche mint Akzente: #b8d8be
 // background-color: #f6f1e9
-
-.testLayout {
-  display: flex;
-  justify-content: center;
-  position: fixed;
-  bottom: 0;
-}

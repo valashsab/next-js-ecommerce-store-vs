@@ -38,7 +38,7 @@ export default function SingleProductPage(props) {
         <li data-test-id="product-price">{singleProduct.price}</li>
         <li>{singleProduct.weight}</li>
       </ul>
-      <div>{productToDisplay?.itemNumber}</div>
+      <div>Quantity: {productToDisplay?.quantity}</div>
       <AddToCartForm productId={singleProduct.id} />
     </div>
   );
