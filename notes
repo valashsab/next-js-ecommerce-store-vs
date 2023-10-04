@@ -132,3 +132,16 @@ This project should also include tests written for the following functionality:
   - [ ] Link in your GitHub repo's About section: Fly.io deployed website
 - [ ] [Drone bot](https://learn.upleveled.io/courses/bootcamp-pern/modules/cheatsheet-tasks/#upleveled-drone) has been tagged and responded with a passing message
 - [ ] Correct GitHub commit message format (see [Writing Commit Messages](https://learn.upleveled.io/courses/bootcamp-pern/modules/cheatsheet-git-github/#writing-commit-messages))
+
+1st part
+
+- display cookies on cart page - only the ones with quantities, which have been added to the cart
+- variable to store the products with quantity - with specifically prices of these added products and
+- variable to calculate the tax
+- variable to calculate the total sum: build a function to add theses variables + adding the tax variable
+
+2nd part
+apart from removing itme should it also be possible to add items?
+
+- remove button - new cookie set up
+- calculations to decrease items and total sum
