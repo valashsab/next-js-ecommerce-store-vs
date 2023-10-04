@@ -4,8 +4,6 @@ import { getProducts } from '../../database/products';
 import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
 
-// import quantity from '../products/[productId]/AddToCartForm';
-
 export default function CartPage() {
   const products = getProducts();
 
@@ -28,11 +26,11 @@ export default function CartPage() {
     (product) => product.quantity !== undefined,
   );
 
-  // try to add a variable updatedCart & if function returning old+newcookie quantity or old quantity
-  if (!productsWithQuantity.id) => {
-    return [...productsWithQuantity, quantity: matchingWithProductFromCookie?.quantity];
-  }
-  ///
+  // // try to add a variable updatedCart & if function returning old+newcookie quantity or old quantity
+  // if (productObject.id) => {
+  //   return ([...productsWithQuantity, quantity: matchingWithProductFromCookie?.quantity]);
+  // // }
+  // ///
 
   return (
     <div>
