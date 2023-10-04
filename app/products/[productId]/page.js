@@ -27,20 +27,24 @@ export default function SingleProductPage(props) {
   return (
     <div>
       <h1>{singleProduct.type}</h1>
+      <div>
+        <Image
+          data-test-id="product-image"
+          src={`/images/${singleProduct.type}.png`}
+          alt={singleProduct.type}
+          width={200}
+          height={200}
+        />
+        <ul>
+          <li data-test-id="product-price">{singleProduct.price}</li>
+          <li>{singleProduct.weight}</li>
+          <li data-test-id="product-quantity">
+            Quantity: {productToDisplay?.quantity}
+          </li>
+        </ul>
 
-      <Image
-        data-test-id="product-image"
-        src={`/images/${singleProduct.type}.png`}
-        alt={singleProduct.type}
-        width={200}
-        height={200}
-      />
-      <ul>
-        <li data-test-id="product-price">{singleProduct.price}</li>
-        <li>{singleProduct.weight}</li>
-      </ul>
-      <div>Quantity: {productToDisplay?.quantity}</div>
-      <AddToCartForm productId={singleProduct.id} />
+        <AddToCartForm productId={singleProduct.id} />
+      </div>
     </div>
   );
 }

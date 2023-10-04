@@ -14,7 +14,7 @@ export default function CartPage() {
 
   const productsInput = !productsCookie ? [] : parseJson(productsCookie);
 
-  // this display all products with the number of saved quantities in the cart, even if no quantity the product will be shown
+  // display of all products with the number of saved quantities in the cart, even if no quantity the product will be shown
   const allProductsInCart = products.map((product) => {
     const matchingWithProductFromCookie = productsInput.find(
       (productObject) => product.id === productObject.id,
@@ -28,23 +28,40 @@ export default function CartPage() {
     (product) => product.quantity !== undefined,
   );
 
-  // if the item number of a existing quantity of a product exists already + add the new quantity: old variable 'productsWithQuantity', new
-  // const newProductsWithQuantity =
+  // try to add a variable updatedCart & if function returning old+newcookie quantity or old quantity
+  if (!productsWithQuantity.id) => {
+    return [...productsWithQuantity, quantity: matchingWithProductFromCookie?.quantity];
+  }
+  ///
 
   return (
     <div>
       {productsWithQuantity.length > 0 ? (
         // If there are products with quantity, map and display them
+
         productsWithQuantity.map((product) => (
           <div key={`product-div-${product.id}`}>
             <Link href={`/products/${product.id}`}>{product.type}</Link>
+            <br />
             <Image
               src={`/images/${product.type}.png`}
               alt={product.type}
               width={100}
               height={100}
             />
-            {product.quantity}
+            <br />
+            Quantity:{product.quantity}
+            <br />
+            Price: {product.price}
+            <br />
+            <br />
+            Subtotal:
+            <br />
+            <button>Remove</button>
+            <br />
+            <br />
+            <br />
+            <br />
           </div>
         ))
       ) : (
