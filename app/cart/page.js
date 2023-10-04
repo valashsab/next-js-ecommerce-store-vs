@@ -23,27 +23,34 @@ export default function CartPage() {
     return { ...product, quantity: matchingWithProductFromCookie?.quantity };
   });
 
+  // displays only the products with quantities & if no products with quantities, then display 'no items in cart'
   const productsWithQuantity = allProductsInCart.filter(
-    (product) => product.quantity > 0,
+    (product) => product.quantity !== undefined,
   );
+
+  // if the item number of a existing quantity of a product exists already + add the new quantity: old variable 'productsWithQuantity', new
+  // const newProductsWithQuantity =
 
   return (
     <div>
-      {/* before maping over the array of objects, filter to find the products with quantity */}
-      {productsWithQuantity.map((product) => {
-        return (
+      {productsWithQuantity.length > 0 ? (
+        // If there are products with quantity, map and display them
+        productsWithQuantity.map((product) => (
           <div key={`product-div-${product.id}`}>
             <Link href={`/products/${product.id}`}>{product.type}</Link>
             <Image
               src={`/images/${product.type}.png`}
               alt={product.type}
-              width={200}
-              height={200}
+              width={100}
+              height={100}
             />
             {product.quantity}
           </div>
-        );
-      })}
+        ))
+      ) : (
+        // If there are no products with quantity, display the message
+        <h1>No items in cart.</h1>
+      )}
     </div>
   );
 }
