@@ -67,7 +67,7 @@ export default function CartPage() {
           ))}
         </div>
       ) : (
-        <h1>No items in cart.</h1>
+        <h1>No items in cart TEST TEST TEST.</h1>
       )}
     </div>
   );
