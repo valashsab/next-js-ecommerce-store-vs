@@ -5,7 +5,7 @@ import { parseJson } from '../../../util/json';
 
 export async function setOrUpdateQuantity(productId, quantity) {
   // 1. get & store current cookie
-  const productsCookie = getCookie('cart');
+  const productsCookie = getCookie('products');
   // 2. parse the cookie value
 
   // !productsCookie <=> productsCookie === undefined  // save parsed cookie or save empty []
@@ -33,5 +33,5 @@ export async function setOrUpdateQuantity(productId, quantity) {
   }
 
   // 4. we overwrite the cookie
-  await cookies().set('cart', JSON.stringify(productsInput));
+  await cookies().set('products', JSON.stringify(productsInput));
 }

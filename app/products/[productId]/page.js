@@ -16,7 +16,7 @@ export default function SingleProductPage(props) {
   const productToDisplay = products.find((product) => {
     return product.id === singleProduct.id;
   });
-  console.log(productToDisplay);
+
   //
 
   // error if page is not found
@@ -38,11 +38,8 @@ export default function SingleProductPage(props) {
         <ul>
           <li data-test-id="product-price">{singleProduct.price}</li>
           <li>{singleProduct.weight}</li>
-          <li data-test-id="product-quantity">
-            Quantity: {productToDisplay?.quantity}
-          </li>
         </ul>
-
+        <div>Quantity: {productToDisplay?.quantity}</div>
         <AddToCartForm productId={singleProduct.id} />
       </div>
     </div>
