@@ -29,13 +29,15 @@ export default function ProductsPage() {
         {products.map((product) => {
           return (
             <div key={`product-div-${product.id}`}>
-              <Link href={`/products/${product.id}`}>{product.type}</Link>
-              <Image
-                src={`/images/${product.type}.png`}
-                alt={product.type}
-                width={200}
-                height={200}
-              />
+              <Link href={`/products/${product.id}`}>
+                <div>{product.type}</div>
+                <Image
+                  src={`/images/${product.type}.png`}
+                  alt={product.type}
+                  width={200}
+                  height={200}
+                />
+              </Link>
             </div>
           );
         })}
