@@ -23,7 +23,7 @@ export default function ProductsPage() {
 
   return (
     <div>
-      <h1>Matcha selection and traditional matcha sets</h1>
+      <h1>Matcha selection & sets</h1>
 
       <span className="listedProducts">
         {products.map((product) => {

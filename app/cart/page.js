@@ -36,34 +36,37 @@ export default function CartPage() {
     <div>
       {productsWithQuantity.length > 0 ? (
         // If there are products with quantity, map and display them
-
-        productsWithQuantity.map((product) => (
-          <div key={`product-div-${product.id}`}>
-            <Link href={`/products/${product.id}`}>{product.type}</Link>
-            <br />
-            <Image
-              src={`/images/${product.type}.png`}
-              alt={product.type}
-              width={100}
-              height={100}
-            />
-            <br />
-            Quantity:{product.quantity}
-            <br />
-            Price: {product.price}
-            <br />
-            <br />
-            Subtotal:
-            <br />
-            <button>Remove</button>
-            <br />
-            <br />
-            <br />
-            <br />
-          </div>
-        ))
+        <div>
+          <h1>My cart</h1>
+          {productsWithQuantity.map((product) => (
+            <div key={`product-div-${product.id}`}>
+              <Link href={`/products/${product.id}`}>
+                {product.type}
+                <br />
+                <Image
+                  src={`/images/${product.type}.png`}
+                  alt={product.type}
+                  width={100}
+                  height={100}
+                />
+              </Link>
+              <br />
+              Quantity: {product.quantity}
+              <br />
+              Price: {product.price}
+              <br />
+              <br />
+              Subtotal:
+              <br />
+              <button>Remove</button>
+              <br />
+              <br />
+              <br />
+              <br />
+            </div>
+          ))}
+        </div>
       ) : (
-        // If there are no products with quantity, display the message
         <h1>No items in cart.</h1>
       )}
     </div>
