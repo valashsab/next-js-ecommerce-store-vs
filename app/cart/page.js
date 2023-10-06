@@ -3,13 +3,13 @@ import Link from 'next/link';
 import { getProducts } from '../../database/products';
 import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
-import { setOrUpdateQuantity } from '../products/[productId]/actions';
 
 export default function CartPage() {
   const products = getProducts();
 
   // cookies
   const productsCookie = getCookie('products');
+
   const productsInput = !productsCookie ? [] : parseJson(productsCookie);
 
   // display of all products with the number of saved quantities in the cart, even if no quantity the product will be shown
@@ -25,14 +25,6 @@ export default function CartPage() {
   const productsWithQuantity = allProductsInCart.filter(
     (product) => product.quantity !== undefined,
   );
-
-  const handleUpdateQuantity = async (productId, quantity) => {
-    // Call the setOrUpdateQuantity function to update the quantity in the cookie
-    await setOrUpdateQuantity(productId, quantity);
-
-    // After updating the quantity, you may want to refresh the component or update the state
-    // to reflect the new cart state.
-  };
 
   return (
     <div>
@@ -60,13 +52,7 @@ export default function CartPage() {
               <br />
               Subtotal:
               <br />
-              <button
-                onClick={() =>
-                  handleUpdateQuantity(product.id, product.quantity - 1)
-                }
-              >
-                Remove
-              </button>
+              <button>Remove</button>
               <br />
               <br />
               <br />
