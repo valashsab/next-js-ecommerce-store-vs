@@ -8,7 +8,7 @@ export default function Home() {
     <main>
       <h1>MATCHA</h1>
       <div className="mainImg">
-        <Image src={matchapowder} alt="matcha powder" />
+        <Image src={matchapowder} alt="matcha powder" width={600} />
       </div>
       <section className="generalInfo">
         <p>PLACEHOLDER: General information</p>

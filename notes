@@ -217,3 +217,38 @@ Subtotal:
 </div>
 );
 } -->
+
+<!-- // remove button - not working yet but ideas to adapt code
+
+'use client';
+import { useState } from 'react';
+import { getCookie, setCookie } from '../../util/cookies';
+import { parseJson } from '../../util/json';
+
+export default function RemoveButton() {
+  const [isRemoving, setIsRemoving] = useState(false);
+
+  const handleRemoveClick = () => {
+    setIsRemoving(true);
+
+    const productsCookie = getCookie('products');
+    const productsInput = !productsCookie ? [] : parseJson(productsCookie);
+
+    // Remove the product from the cookie
+    const updatedProductsInput = productsInput.filter(
+      (productObject) => productObject.id !== productId,
+    );
+
+
+    setCookie('products', JSON.stringify(updatedProductsInput));
+
+    // Notify the parent component (CartPage) that an item has been removed
+    onRemove(productId);
+  };
+
+  return (
+    <button onClick={handleRemoveClick} disabled={isRemoving}>
+      {isRemoving ? 'Removing...' : 'Remove'}
+    </button>
+  );
+} -->
