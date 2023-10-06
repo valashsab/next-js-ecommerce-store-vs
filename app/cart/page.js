@@ -62,10 +62,6 @@ export default function CartPage() {
                 Subtotal: {product.quantity * product.price}
                 <br />
                 <button>Remove</button>
-                {/* <RemoveButton
-                  productId={product.id}
-                  onRemove={handleRemoveItem} */}
-                {/* /> */}
                 <br />
                 <br />
                 <br />

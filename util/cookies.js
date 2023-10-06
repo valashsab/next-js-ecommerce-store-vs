@@ -5,9 +5,9 @@ export function getCookie(name) {
   return cookies().get(name)?.value;
 }
 
-// export function setCookie(name) {
-//   return cookies().set(name).value;
-// }
+export function setCookie(name) {
+  return cookies().set(name).value;
+}
 
 // async function create(data) {
 //   cookies().delete('name')
