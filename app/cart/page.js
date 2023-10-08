@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { getProducts } from '../../database/products';
 import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
+import RemoveButton from './RemoveButton';
 
 export default function CartPage() {
   const products = getProducts();
@@ -26,11 +27,10 @@ export default function CartPage() {
     (product) => product.quantity !== undefined,
   );
 
-  // // try to add a variable updatedCart & if function returning old+newcookie quantity or old quantity
-  // if (productObject.id) => {
-  //   return ([...productsWithQuantity, quantity: matchingWithProductFromCookie?.quantity]);
-  // // }
-  // ///
+  // Calculate the total by summing up all the subtotals
+  const total = productsWithQuantity.reduce((accumulator, product) => {
+    return accumulator + product.quantity * product.price;
+  }, 0);
 
   return (
     <div>
@@ -56,18 +56,20 @@ export default function CartPage() {
               Price: {product.price}
               <br />
               <br />
-              Subtotal:
+              Subtotal: {product.quantity * product.price}
               <br />
-              <button>Remove</button>
+              <RemoveButton productId={product.id} />
               <br />
               <br />
               <br />
               <br />
             </div>
           ))}
+          <div>Total sum (incl. tax): {total}</div>
+          <button>Checkout</button>
         </div>
       ) : (
-        <h1>No items in cart Test.</h1>
+        <h1>No items in cart.</h1>
       )}
     </div>
   );
