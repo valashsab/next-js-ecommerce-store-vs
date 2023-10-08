@@ -5,7 +5,7 @@ export default function ThankyouPage() {
     <main>
       <div>
         <h1>Thank you for your order!</h1>
-        <p>Your order will delivered within 2-3 working days.</p>
+        <p>Your order will be delivered within 2-3 working days.</p>
         <span>
           <Link href="/"> Back to home</Link>
         </span>
