@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { getProducts } from '../../database/products';
 import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
+// import CheckoutButton from './CheckoutButton';
 import RemoveButton from './RemoveButton';
 
 export default function CartPage() {
@@ -66,7 +67,9 @@ export default function CartPage() {
             </div>
           ))}
           <div>Total sum (incl. tax): {total}</div>
-          <button>Checkout</button>
+
+          <Link href="/checkout">Checkout</Link>
+          {/* <CheckoutButton /> */}
         </div>
       ) : (
         <h1>No items in cart.</h1>
