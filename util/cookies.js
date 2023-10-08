@@ -8,7 +8,3 @@ export function getCookie(name) {
 export function setCookie(name) {
   return cookies().set(name).value;
 }
-
-// async function create(data) {
-//   cookies().delete('name')
-// }

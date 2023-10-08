@@ -3,8 +3,7 @@ import Link from 'next/link';
 import { getProducts } from '../../database/products';
 import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
-
-// import RemoveButton from './RemoveButton';
+import RemoveButton from './RemoveButton';
 
 export default function CartPage() {
   const products = getProducts();
@@ -61,7 +60,7 @@ export default function CartPage() {
                 <br />
                 Subtotal: {product.quantity * product.price}
                 <br />
-                <button>Remove</button>
+                <RemoveButton productId={product.id} />
                 <br />
                 <br />
                 <br />
