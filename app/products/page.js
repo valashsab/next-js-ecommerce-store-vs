@@ -5,8 +5,8 @@ import { getProducts } from '../../database/products';
 // import { getCookie } from '../../util/cookies';
 // import { parseJson } from '../../util/json';
 
-export default function ProductsPage() {
-  const products = getProducts();
+export default async function ProductsPage() {
+  const products = await getProducts();
 
   // // added 03.10.23 cookies
   // const productsCookie = getCookie('products');

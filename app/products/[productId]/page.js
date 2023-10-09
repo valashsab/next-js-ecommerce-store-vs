@@ -5,9 +5,9 @@ import { getCookie } from '../../../util/cookies';
 import { parseJson } from '../../../util/json';
 import AddToCartForm from './AddToCartForm';
 
-export default function SingleProductPage(props) {
+export default async function SingleProductPage(props) {
   // it's a string therefore need to convert to a number
-  const singleProduct = getProductById(Number(props.params.productId));
+  const singleProduct = await getProductById(Number(props.params.productId));
   // cookies
   const productsCookie = getCookie('products');
 
