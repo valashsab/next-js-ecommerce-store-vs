@@ -4,6 +4,7 @@ const products = [
     type: 'izumi',
     weight: '30g',
     price: 22,
+    currency: '€',
     slug: 'Matcha Izumi',
   },
   {
@@ -11,6 +12,7 @@ const products = [
     type: 'akashi',
     weight: '30g',
     price: 32,
+    currency: '€',
     slug: 'Matcha Akashi',
   },
 
@@ -19,6 +21,7 @@ const products = [
     type: 'horai',
     weight: '30g',
     price: 42,
+    currency: '€',
     slug: 'Matcha Horai',
   },
   {
@@ -26,6 +29,7 @@ const products = [
     type: 'tsuki',
     weight: '50g',
     price: 13,
+    currency: '€',
     slug: 'Matcha Tsuki',
   },
 ];
