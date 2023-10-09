@@ -5,8 +5,8 @@ import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
 import RemoveButton from './RemoveButton';
 
-export default function CartPage() {
-  const products = getProducts();
+export default async function CartPage() {
+  const products = await getProducts();
 
   // cookies
   const productsCookie = getCookie('products');

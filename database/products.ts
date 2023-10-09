@@ -1,6 +1,7 @@
 import 'server-only';
 import { cache } from 'react';
 import { sql } from '../database/connect';
+import { Product } from '../migrations/00000-createTableProducts';
 
 // const products1 = [
 //   {
@@ -38,14 +39,15 @@ import { sql } from '../database/connect';
 //   },
 // ];
 
-type Product = {
-  id: number;
-  type: string;
-  weight: string;
-  price: number;
-  currency: string;
-  slug: string | null;
-};
+// type Product = {
+//   id: number;
+//   type: string;
+//   weight: string;
+//   price: number;
+//   currency: string;
+//   slug: string | null;
+// };
+
 export const getProducts = cache(async () => {
   // return products;
   const products = await sql<Product[]>`
@@ -67,6 +69,19 @@ export const getProductById = cache(async (id: number) => {
   `;
   return product;
 });
+
+// export const deleteProductById = cache(async (id: number) => {
+//   const [product] = await sql<Product[]>`
+//   DELETE
+//   *
+//   FROM
+//   products
+//   WHERE
+//   id = ${id}
+//   RETURNING *
+//   `;
+//   return product;
+// });
 
 // export function getProductById(id: number) {
 //   return products1.find((product) => product.id === id);
