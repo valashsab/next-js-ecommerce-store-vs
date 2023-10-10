@@ -3,7 +3,12 @@ import { cookies } from 'next/headers';
 import { getCookie } from '../../../util/cookies';
 import { parseJson } from '../../../util/json';
 
-export async function setOrUpdateQuantity(productId, quantity) {
+export type Product = {
+  id: number;
+  quantity: number;
+};
+
+export async function setOrUpdateQuantity(productId: number, quantity: number) {
   // 1. get & store current cookie
   const productsCookie = getCookie('products');
   // 2. parse the cookie value
@@ -13,7 +18,7 @@ export async function setOrUpdateQuantity(productId, quantity) {
     ? // Case A: cookie is undefined
       // we need to create a new cookie with an empty array
       []
-    : parseJson(productsCookie);
+    : parseJson(productsCookie) || [];
 
   // 3. we update the cookie value
   // We get the the object for the products on cookies or undefined

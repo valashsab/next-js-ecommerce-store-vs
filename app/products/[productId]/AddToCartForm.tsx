@@ -1,10 +1,18 @@
 'use client';
 
-import { useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 import { setOrUpdateQuantity } from './actions';
 
-export default function AddToCartForm(props) {
+type Props = {
+  productId: number;
+};
+
+export default function AddToCartForm(props: Props) {
   const [quantity, setQuantity] = useState(1);
+
+  function handleChange(event: ChangeEvent<HTMLInputElement>) {
+    setQuantity(parseInt(event.currentTarget.value));
+  }
 
   return (
     <form>
@@ -15,7 +23,8 @@ export default function AddToCartForm(props) {
         min="1"
         step="1" // incremental step when using the arrows
         value={quantity}
-        onChange={(event) => setQuantity(parseInt(event.currentTarget.value))}
+        onChange={handleChange}
+        // original way: onChange={(event) => setQuantity(parseInt(event.currentTarget.value)}
       />
 
       {/* <button onClick={handleIncrease}>+</button>

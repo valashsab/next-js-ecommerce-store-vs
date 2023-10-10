@@ -5,15 +5,27 @@ import { getCookie } from '../../../util/cookies';
 import { parseJson } from '../../../util/json';
 import AddToCartForm from './AddToCartForm';
 
-export default async function SingleProductPage(props) {
+type Props = {
+  params: {
+    productId: string;
+  };
+};
+
+export default async function SingleProductPage(props: Props) {
   // it's a string therefore need to convert to a number
   const singleProduct = await getProductById(Number(props.params.productId));
   // cookies
+
+  if (!singleProduct) {
+    notFound();
+  }
+
   const productsCookie = getCookie('products');
 
   const products = !productsCookie ? [] : parseJson(productsCookie);
+  // parseJson(productsCookie) || []; alternative to always have an array type
 
-  const productToDisplay = products.find((product) => {
+  const productToDisplay = products?.find((product) => {
     return product.id === singleProduct.id;
   });
 
