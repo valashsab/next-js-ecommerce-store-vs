@@ -23,6 +23,9 @@ dependencies:
   react-dom:
     specifier: latest
     version: 18.2.0(react@18.2.0)
+  saas:
+    specifier: ^1.0.0
+    version: 1.0.0
   sass:
     specifier: ^1.68.0
     version: 1.68.0
@@ -3494,6 +3497,10 @@ packages:
     dependencies:
       queue-microtask: 1.2.3
     dev: true
+
+  /saas@1.0.0:
+    resolution: {integrity: sha512-FgayhFS18BlPfcyMcOqxD7PIyNyUjqyv8R+rsr3X2KRK2icEUL4uvWBF+lZ0IPqJIO2kUO0d20OXY+R+pdriqg==}
+    dev: false
 
   /sade@1.8.1:
     resolution: {integrity: sha512-xal3CZX1Xlo/k4ApwCFrHVACi9fBqJ7V+mwhBsuf/1IOKbBy098Fex+Wa/5QMubw09pSZ/u8EY8PWgevJsXp1A==}

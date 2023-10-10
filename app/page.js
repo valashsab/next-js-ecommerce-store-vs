@@ -1,6 +1,7 @@
 import './globals.scss';
 import Image from 'next/image';
 import Link from 'next/link';
+import CookieBanner from '../CookieBanner';
 import matchapowder from '../public/images/matchapowder.jpg';
 
 export default function Home() {
@@ -21,6 +22,9 @@ export default function Home() {
       <section className="signUp">
         <div>PLACEHOLDER: Sign up input field</div>
       </section>
+      <br />
+      <br />
+      <CookieBanner />
     </main>
   );
 }
