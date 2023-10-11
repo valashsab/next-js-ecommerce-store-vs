@@ -1,5 +1,5 @@
 'use client';
-import { removeProduct } from './actions';
+import { removeProduct } from './removeProduct';
 
 export default function RemoveButton({ productId }) {
   const handleRemoveProduct = async () => {

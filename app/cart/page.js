@@ -1,8 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
+// import { useRouter } from 'next/router';
 import { getProducts } from '../../database/products';
 import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
+// import CheckoutButton from './CheckoutButton';
 import RemoveButton from './RemoveButton';
 
 export default async function CartPage() {
@@ -66,7 +68,20 @@ export default async function CartPage() {
             </div>
           ))}
           <div>Total sum (incl. tax): {total}</div>
-          <button>Checkout</button>
+          <br />
+          <br />
+
+          <Link href="/checkout">
+            <div>
+              <button>Checkout</button>
+            </div>
+          </Link>
+          <br />
+          <Link href="/products">
+            <div>
+              <button>Continue shopping</button>
+            </div>
+          </Link>
         </div>
       ) : (
         <h1>No items in cart.</h1>
