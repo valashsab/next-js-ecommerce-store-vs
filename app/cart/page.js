@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { getProducts } from '../../database/products';
 import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
-// import CheckoutButton from './CheckoutButton';
 import RemoveButton from './RemoveButton';
 
 export default async function CartPage() {
@@ -29,8 +28,13 @@ export default async function CartPage() {
     (product) => product.quantity !== undefined,
   );
 
+  // Calculate the total quantity
+  const totalQuantity = productsWithQuantity.reduce((total, product) => {
+    return total + (product.quantity || 0);
+  }, 0);
+
   // Calculate the total by summing up all the subtotals
-  const total = productsWithQuantity.reduce((accumulator, product) => {
+  const totalSum = productsWithQuantity.reduce((accumulator, product) => {
     return accumulator + product.quantity * product.price;
   }, 0);
 
@@ -67,10 +71,10 @@ export default async function CartPage() {
               <br />
             </div>
           ))}
-          <div>Total sum (incl. tax): {total}</div>
+          <div>Total sum (incl. tax): {totalSum}</div>
+          <div>Total quantity: {totalQuantity}</div>
           <br />
           <br />
-
           <Link href="/checkout">
             <div>
               <button>Checkout</button>

@@ -4,7 +4,3 @@ import { cookies } from 'next/headers';
 export function getCookie(name: string) {
   return cookies().get(name)?.value;
 }
-
-// export function setCookie(name: string) {
-//   return cookies().set(name).value;
-// }

@@ -1,9 +1,20 @@
 import './globals.scss';
 import { Inconsolata } from 'next/font/google';
+// import { useRouter } from 'next/router';
+// import Header from '../Header';
+// import totalQuantity from '../totalQuantity';
+// import { useRouter } from 'next/navigation';
+// import { totalQuantity } from './cart/page';
 import Link from 'next/link';
-import { getProducts } from '../database/products';
-import { getCookie } from '../util/cookies';
-import { parseJson } from '../util/json';
+
+// import { useRouter } from 'next/navigation';
+// import Header from '../Header';
+
+// import totalQuantity from './cart/page';
+
+// import { getProducts } from '../database/products';
+// import { getCookie } from '../util/cookies';
+// import { parseJson } from '../util/json';
 
 const inconsolata = Inconsolata({
   weight: ['200', '400', '600'],
@@ -19,27 +30,8 @@ export const metadata = {
   description: 'Premium matcha available for purchase in our e-commerce store.',
 };
 
-export default async function RootLayout({ children }) {
-  const products = await getProducts();
-
-  // cookies
-  const productsCookie = getCookie('products');
-
-  const productsInput = !productsCookie ? [] : parseJson(productsCookie);
-
-  // display of all products with the number of saved quantities in the cart, even if no quantity the product will be shown
-  const allProductsInCart = products.map((product) => {
-    const matchingWithProductFromCookie = productsInput.find(
-      (productObject) => product.id === productObject.id,
-    );
-
-    return { ...product, quantity: matchingWithProductFromCookie?.quantity };
-  });
-
-  // displays only the products with quantities & if no products with quantities, then display 'no items in cart'
-  const productsWithQuantity = allProductsInCart.filter(
-    (product) => product.quantity !== undefined,
-  );
+export default function RootLayout({ children }) {
+  // const router = useRouter();
 
   return (
     <html lang="en">
@@ -58,42 +50,22 @@ export default async function RootLayout({ children }) {
             </li>
             <li>
               <Link className="headerLinks" href="/about">
-                About us
+                About us{' '}
               </Link>
             </li>
             <li className="navCart">
               <Link className="headerLinks" href="/cart">
-                Cart
-                <div>{productsWithQuantity.quantity}</div>
+                Cart{' '}
               </Link>
             </li>
+            {/* //         {totalQuantity} */}
           </ul>
         </nav>
+        {/* <Header totalQuantity={totalQuantity} /> */}
+        {/* <Header totalQuantity={totalQuantity} router={router} /> */}
+        {/* <Header totalQuantity={totalQuantity} router={router} /> */}
+        {/* <div>Total quantity: {totalQuantity}</div> */}
         {children}
-        <footer className="footer">
-          <ul className="footerList">
-            <li>
-              <Link className="footerLinks" href="/privacypolicy">
-                Privacy Policy
-              </Link>
-            </li>
-            <li>
-              <Link className="footerLinks" href="/termsandconditions">
-                Terms & Conditions
-              </Link>
-            </li>
-            <li>
-              <Link className="footerLinks" href="/cookiespolicy">
-                Cookies Policy
-              </Link>
-            </li>
-            <li>
-              <Link className="footerLinks" href="/imprint">
-                Imprint
-              </Link>
-            </li>
-          </ul>
-        </footer>
       </body>
     </html>
   );
