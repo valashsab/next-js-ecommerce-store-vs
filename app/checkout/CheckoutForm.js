@@ -9,7 +9,7 @@ export default function CheckOut() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await deleteCookie('products');
+    await deleteCookie('cart');
     await router.push(`/thankyou`);
   };
 

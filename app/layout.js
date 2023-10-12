@@ -1,20 +1,7 @@
 import './globals.scss';
 import { Inconsolata } from 'next/font/google';
-// import { useRouter } from 'next/router';
-// import Header from '../Header';
-// import totalQuantity from '../totalQuantity';
-// import { useRouter } from 'next/navigation';
-// import { totalQuantity } from './cart/page';
-import Link from 'next/link';
-
-// import { useRouter } from 'next/navigation';
-// import Header from '../Header';
-
-// import totalQuantity from './cart/page';
-
-// import { getProducts } from '../database/products';
-// import { getCookie } from '../util/cookies';
-// import { parseJson } from '../util/json';
+import Footer from '../Footer';
+import Header from '../Header';
 
 const inconsolata = Inconsolata({
   weight: ['200', '400', '600'],
@@ -29,15 +16,14 @@ export const metadata = {
   },
   description: 'Premium matcha available for purchase in our e-commerce store.',
 };
-
-export default function RootLayout({ children }) {
-  // const router = useRouter();
-
+// export default function RootLayout({ children }) {
+export default function RootLayout(props) {
   return (
     <html lang="en">
       <body className={inconsolata.className}>
-        <nav>
-          <ul>
+        {/* <nav> */}
+        <Header />
+        {/* <ul>
             <li className="navHome">
               <Link className="headerLinks" href="/">
                 Home
@@ -59,17 +45,15 @@ export default function RootLayout({ children }) {
             </li>
             <li className="navCart">
               <Link className="headerLinks" href="/cart">
-                Cart{' '}
+                Cart
               </Link>
             </li>
-            {/* //         {totalQuantity} */}
-          </ul>
-        </nav>
-        {/* <Header totalQuantity={totalQuantity} /> */}
-        {/* <Header totalQuantity={totalQuantity} router={router} /> */}
-        {/* <Header totalQuantity={totalQuantity} router={router} /> */}
-        {/* <div>Total quantity: {totalQuantity}</div> */}
-        {children}
+
+          </ul> */}
+        {/* </nav> */}
+        {/* {children} */}
+        {props.children}
+        <Footer />
       </body>
     </html>
   );

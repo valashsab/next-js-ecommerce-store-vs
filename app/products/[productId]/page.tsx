@@ -21,7 +21,7 @@ export default async function SingleProductPage(props: Props) {
     return notFound();
   }
 
-  const productsCookie = getCookie('products');
+  const productsCookie = getCookie('cart');
 
   const products = !productsCookie ? [] : parseJson(productsCookie);
   // parseJson(productsCookie) || []; alternative to always have an array type

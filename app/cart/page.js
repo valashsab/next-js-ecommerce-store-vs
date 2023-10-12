@@ -10,7 +10,7 @@ export default async function CartPage() {
   const products = await getProducts();
 
   // cookies
-  const productsCookie = getCookie('products');
+  const productsCookie = getCookie('cart');
 
   const productsInput = !productsCookie ? [] : parseJson(productsCookie);
 
