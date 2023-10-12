@@ -81,9 +81,9 @@ export default async function CartPage() {
           <div data-test-id="cart-total">Total quantity: {totalQuantity}</div>
           <br />
           <br />
-          <Link data-test-id="cart-checkout" href="/checkout">
+          <Link href="/checkout">
             <div>
-              <button>Checkout</button>
+              <button data-test-id="cart-checkout">Checkout</button>
             </div>
           </Link>
           <br />
