@@ -16,30 +16,34 @@ export default function Header() {
   console.log(cartQuantity);
 
   return (
-    <nav>
-      <ul>
-        <li className="navHome">
-          <Link className="headerLinks" href="/">
-            Home
-          </Link>
-        </li>
-        <li className="navProductsAbout">
-          <Link className="headerLinks" href="/products">
-            Products
-          </Link>
-        </li>
-        <li>
-          <Link className="headerLinks" href="/about">
-            About us
-          </Link>
-        </li>
-        <li className="navCart">
-          <Link className="headerLinks" href="/cart">
-            Cart
-          </Link>
-        </li>
-        <li>{cartQuantity}</li>
-      </ul>
-    </nav>
+    <header>
+      <nav>
+        <ul>
+          <li className="navHome">
+            <Link className="headerLinks" href="/">
+              Home
+            </Link>
+          </li>
+          <li className="navProductsAbout">
+            <Link className="headerLinks" href="/products">
+              Products
+            </Link>
+          </li>
+          <li>
+            <Link className="headerLinks" href="/about">
+              About us
+            </Link>
+          </li>
+          <li className="navCart">
+            <Link data-test-id="cart-link" href="/cart" className="headerLinks">
+              Cart
+            </Link>
+          </li>
+          <li>
+            <div data-test-id="cart-count">{cartQuantity}</div>
+          </li>
+        </ul>
+      </nav>
+    </header>
   );
 }
