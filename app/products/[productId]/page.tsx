@@ -50,9 +50,12 @@ export default async function SingleProductPage(props: Props) {
         <ul>
           <li data-test-id="product-price">{singleProduct.price}</li>
           <li>{singleProduct.weight}</li>
+
+          <li>Quantity: {productToDisplay?.quantity}</li>
+          <li data-test-id="product-quantity">
+            <AddToCartForm productId={singleProduct.id} />
+          </li>
         </ul>
-        <div>Quantity: {productToDisplay?.quantity}</div>
-        <AddToCartForm productId={singleProduct.id} />
       </div>
     </div>
   );

@@ -7,7 +7,12 @@ export default function RemoveButton({ productId }) {
   };
   return (
     <div>
-      <button onClick={handleRemoveProduct}>Remove</button>
+      <button
+        data-test-id={`cart-product-remove-${productId}`}
+        onClick={handleRemoveProduct}
+      >
+        Remove
+      </button>
     </div>
   );
 }

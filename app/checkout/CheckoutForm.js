@@ -123,7 +123,12 @@ export default function CheckOut() {
               required
             />
             <br />
-            <button onClick={handleSubmit}>Confirm order</button>
+            <button
+              data-test-id="checkout-confirm-order"
+              onClick={handleSubmit}
+            >
+              Confirm order
+            </button>
             {/* <button
               formAction={async () => await deleteCookie(props.productId)}
             >

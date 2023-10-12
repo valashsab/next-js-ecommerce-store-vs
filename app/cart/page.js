@@ -45,9 +45,12 @@ export default async function CartPage() {
         <div>
           <h1>My cart</h1>
           {productsWithQuantity.map((product) => (
-            <div key={`product-div-${product.id}`}>
+            <div
+              data-test-id={`cart-product-${product.id}`}
+              key={`product-div-${product.id}`}
+            >
               <Link href={`/products/${product.id}`}>
-                {product.type}
+                <li>{product.type}</li>
                 <br />
                 <Image
                   src={`/images/${product.type}.png`}
@@ -57,7 +60,10 @@ export default async function CartPage() {
                 />
               </Link>
               <br />
-              Quantity: {product.quantity}
+              Quantity:
+              <div data-test-id={`cart-product-quantity-${product.id}`}>
+                {product.quantity}
+              </div>
               <br />
               Price: {product.price}
               <br />
@@ -72,10 +78,10 @@ export default async function CartPage() {
             </div>
           ))}
           <div>Total sum (incl. tax): {totalSum}</div>
-          <div>Total quantity: {totalQuantity}</div>
+          <div data-test-id="cart-total">Total quantity: {totalQuantity}</div>
           <br />
           <br />
-          <Link href="/checkout">
+          <Link data-test-id="cart-checkout" href="/checkout">
             <div>
               <button>Checkout</button>
             </div>

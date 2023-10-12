@@ -44,7 +44,11 @@ export default function RootLayout({ children }) {
               </Link>
             </li>
             <li className="navProductsAbout">
-              <Link className="headerLinks" href="/products">
+              <Link
+                data-test-id="products-link"
+                className="headerLinks"
+                href="/products"
+              >
                 Products
               </Link>
             </li>
