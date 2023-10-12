@@ -16,8 +16,9 @@ export default async function SingleProductPage(props: Props) {
   const singleProduct = await getProductById(Number(props.params.productId));
   // cookies
 
+  // error if page is not found
   if (!singleProduct) {
-    notFound();
+    return notFound();
   }
 
   const productsCookie = getCookie('products');
@@ -28,13 +29,6 @@ export default async function SingleProductPage(props: Props) {
   const productToDisplay = products?.find((product) => {
     return product.id === singleProduct.id;
   });
-
-  //
-
-  // error if page is not found
-  if (!singleProduct) {
-    return notFound();
-  }
 
   return (
     <div>
