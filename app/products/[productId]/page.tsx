@@ -30,6 +30,8 @@ export default async function SingleProductPage(props: Props) {
     return product.id === singleProduct.id;
   });
 
+  console.log(productToDisplay);
+
   return (
     <div>
       <h1>{singleProduct.type}</h1>
@@ -45,7 +47,7 @@ export default async function SingleProductPage(props: Props) {
           <li data-test-id="product-price">{singleProduct.price}</li>
           <li>{singleProduct.weight}</li>
 
-          <li>Quantity: {productToDisplay?.quantity}</li>
+          {/* <li> Total quantity: {productToDisplay?.quantity}</li> */}
           <li data-test-id="product-quantity">
             <AddToCartForm productId={singleProduct.id} />
           </li>
