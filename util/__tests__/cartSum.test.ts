@@ -16,7 +16,7 @@ test('calculates the total sum correctly', () => {
   // expect(result).toBe(85);
 });
 
-// test('throws an error when arguments are not numbers', () => {
+// // test('throws an error when arguments are not numbers', () => {
 //   // Test that an error is thrown when non-number arguments are provided
 //   const invalidData: Array<{ quantity: string ; price: number }> = [
 //     // @ts-expect-error testing incorrect arguments
