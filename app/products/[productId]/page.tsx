@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getProductById } from '../../../database/products';
 import { getCookie } from '../../../util/cookies';
@@ -47,10 +48,15 @@ export default async function SingleProductPage(props: Props) {
           <li data-test-id="product-price">{singleProduct.price}</li>
           <li>{singleProduct.weight}</li>
 
-          {/* <li> Total quantity: {productToDisplay?.quantity}</li> */}
+          <li>Quantity: {productToDisplay?.quantity}</li>
           <li data-test-id="product-quantity">
             <AddToCartForm productId={singleProduct.id} />
           </li>
+          <Link href="/cart">
+            <div>
+              <button>Checkout</button>
+            </div>
+          </Link>
         </ul>
       </div>
     </div>
