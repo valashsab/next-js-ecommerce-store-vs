@@ -87,38 +87,76 @@ test('navigation test', async ({ page }) => {
   await expect(page.getByText('Quantity:')).toBeVisible();
 
   // click on checkout button
-  await page.getByTestId('cart-checkout').click();
+  await page.getByRole('button', { name: 'Go to cart' }).click();
   await page.waitForURL('http://localhost:3000/cart');
   await expect(page).toHaveURL('http://localhost:3000/cart');
 
   // click on remove button & check removal id product(s)
-  await page.getByTestId('cart-product-remove-1').click();
-  const productID = 1;
-  const quantitySelector = `[data-test-id="cart-product-quantity-${productID}"]`;
+  // Assuming you have a list of products and want to remove the product with a specific ID
+  const productIDToRemove = 1;
+
+  // Click the "Remove" button for the product you want to remove
+  await page.getByTestId(`cart-product-remove-${productIDToRemove}`).click();
+
+  // Check if the removed product's quantity element is not present
+  const quantitySelector = `[data-test-id="cart-product-quantity-${productIDToRemove}"]`;
+
+  // Wait for the quantity element to be removed from the DOM
+  await page.waitForSelector(quantitySelector, { state: 'detached' });
+
+  // Check if the quantity element is not present, indicating the product has been removed
   const quantityElement = await page.$(quantitySelector);
 
-  if (quantityElement) {
-    const quantityText = await quantityElement.innerText();
-    const quantity = parseInt(quantityText, 10);
-
-    if (productID === 1 && quantity === 0) {
-      console.log('Quantity changed to 0 after clicking remove button');
-    } else {
-      console.error(
-        'Quantity did not change to 0 after clicking remove button',
-      );
-    }
+  if (!quantityElement) {
+    console.log(
+      `Product with ID ${productIDToRemove} has been removed, and its quantity is now 0`,
+    );
   } else {
-    console.error('Quantity element not found');
+    console.error(
+      `Product with ID ${productIDToRemove} was not removed, or its quantity is not 0`,
+    );
   }
+
+  // const productID = 1;
+  // await page.getByTestId(`cart-product-remove-${productID}`).click();
+  // // Check if the product has been removed from the cart
+  // // 1. change
+  // // const productSelector = `[data-test-id="cart-product-${productID}"]`;
+  // // const productElement = await page.$(productSelector);
+  // // original
+  // const quantitySelector = `[data-test-id="cart-product-quantity-${productID}"]`;
+  // // new
+  // await page.waitForSelector(quantitySelector);
+  // const quantityElement = await page.$(quantitySelector);
+
+  // // if (!productElement) {
+  // //   console.log(`Product with ID ${productID} has been removed from the cart`);
+  // // } else {
+  // //   const quantitySelector = `[data-test-id="cart-product-quantity-${productID}"]`;
+  // //   const quantityElement = await page.$(quantitySelector);
+
+  // if (quantityElement) {
+  //   const quantityText = await quantityElement.innerText();
+  //   const quantity = parseInt(quantityText, 10);
+
+  //   if (quantity === 0) {
+  //     console.log(
+  //       `Quantity for product with ID ${productID} changed to 0 after clicking remove button`,
+  //     );
+  //   } else {
+  //     console.error(
+  //       `Quantity for product with ID ${productID} did not change to 0 after clicking remove button`,
+  //     );
+  //   }
+  // } else {
+  //   console.error(
+  //     `Quantity element not found for product with ID ${productID}`,
+  //   );
+  // }
 
   // Checkout flow, payment page, thank you page
   // click on checkout button
   await page.getByRole('button', { name: 'Checkout' }).click();
-  await page.waitForURL('http://localhost:3000/checkout');
-  await expect(page).toHaveURL('http://localhost:3000/checkout');
-
-  await page.getByTestId('cart-checkout').click();
   await page.waitForURL('http://localhost:3000/checkout');
   await expect(page).toHaveURL('http://localhost:3000/checkout');
 
