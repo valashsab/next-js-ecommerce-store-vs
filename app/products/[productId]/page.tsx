@@ -57,6 +57,11 @@ export default async function SingleProductPage(props: Props) {
               <button>Checkout</button>
             </div>
           </Link>
+          <Link href="/products">
+            <div>
+              <button>Continue shopping</button>
+            </div>
+          </Link>
         </ul>
       </div>
     </div>
