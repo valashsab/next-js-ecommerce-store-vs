@@ -18,7 +18,7 @@ jobs:
           pg_isready
       - name: Create database user
         run: |
-          sudo -u postgres psql --command="CREATE USER matcha 'matcha'" --command="\du"
+          sudo -u postgres psql --command="CREATE USER matcha PASSWORD 'matcha'" --command="\du"
       - name: Create database and allow user
         run: |
           sudo -u postgres createdb --owner=matcha next_js_ecommerce_store_vs
