@@ -3,6 +3,11 @@ import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
 import CheckoutForm from './CheckoutForm';
 
+export const metadata = {
+  title: 'checkout',
+  description: 'Start your matcha journey now!',
+};
+
 export default async function checkoutPage() {
   const products = await getProducts();
 

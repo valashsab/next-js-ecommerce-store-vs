@@ -1,5 +1,10 @@
 import Link from 'next/link';
 
+export const metadata = {
+  title: 'Thank you',
+  description: 'Thank you for your visit & purchase. Come back soon!',
+};
+
 export default function ThankyouPage() {
   return (
     <main>

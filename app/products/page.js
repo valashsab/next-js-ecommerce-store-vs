@@ -5,6 +5,12 @@ import { getProducts } from '../../database/products';
 // import { getCookie } from '../../util/cookies';
 // import { parseJson } from '../../util/json';
 
+export const metadata = {
+  title: 'Products page',
+  description:
+    'A diverse selection of matcha powder to create your drink & food mixed with matcha.',
+};
+
 export default async function ProductsPage() {
   const products = await getProducts();
 

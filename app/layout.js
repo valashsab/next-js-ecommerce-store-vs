@@ -11,11 +11,12 @@ const inconsolata = Inconsolata({
 
 export const metadata = {
   title: {
-    default: 'Welcome to xyz Matcha e-commerce store',
+    default: 'Welcome to Matcha e-commerce store',
     template: '%s Premium Matcha online',
   },
-  description: 'Premium matcha available for purchase in our e-commerce store.',
+  description: 'Premium matcha available for purchase online',
 };
+
 // export default function RootLayout({ children }) {
 export default function RootLayout(props) {
   return (
