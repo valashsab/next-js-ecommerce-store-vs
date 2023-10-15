@@ -51,7 +51,7 @@ export async function up(sql: Sql) {
 export async function down(sql: Sql) {
   for (const product of products) {
     await sql`
-      DELETE * FROM products WHERE id = ${product.id}
+      DELETE FROM products WHERE id = ${product.id}
   `;
   }
 }
