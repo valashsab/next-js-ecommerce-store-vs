@@ -11,6 +11,7 @@ import { Product } from '../migrations/00000-createTableProducts';
 //     price: 22,
 //     currency: 'Euro',
 //     slug: 'Matcha Izumi',
+//     description: 'The perfect matcha for first-timers to indulge in the  enjoyment of matcha.',
 //   },
 //   {
 //     id: 2,
@@ -19,6 +20,7 @@ import { Product } from '../migrations/00000-createTableProducts';
 //     price: 32,
 //     currency: 'Euro',
 //     slug: 'Matcha Akashi',
+//     description: 'The best-known Matcha variety with a rich aroma: mild, delicately bitter, gentle, sweet and pleasantly digestible.',
 //   },
 
 //   {
@@ -28,6 +30,7 @@ import { Product } from '../migrations/00000-createTableProducts';
 //     price: 42,
 //     currency: 'Euro',
 //     slug: 'Matcha Horai',
+//     description: 'Premium quality with emerald green color, ideal for Matcha connoisseurs and those who want to become one. Only suitable for drinks or pure.',
 //   },
 //   {
 //     id: 4,
@@ -36,8 +39,13 @@ import { Product } from '../migrations/00000-createTableProducts';
 //     price: 13,
 //     currency: 'Euro',
 //     slug: 'Matcha Tsuki',
-//   },
-// ];
+/*     description: 'Matcha Tsuki is a special organic basic matcha blend for use in the kitchen. Rich green tea aroma and fresh green tea taste with a slight bitter note in the finish. The name Tsuki means "moon".
+
+Due to its slightly bitter taste, it is particularly recommended in combination with stronger flavors.
+
+Ideal for matcha mix drinks and matcha latte applications.',
+   },
+ ]; */
 
 // type Product = {
 //   id: number;

@@ -54,7 +54,7 @@ export default async function SingleProductPage(props: Props) {
         </ul>
       </div>
       <div className={styles.quantityInput}>
-        <li>Quantity: {productToDisplay?.quantity}</li>
+        <li>Quantity in cart: {productToDisplay?.quantity}</li>
         <li data-test-id="product-quantity">
           <AddToCartForm productId={singleProduct.id} />
         </li>
