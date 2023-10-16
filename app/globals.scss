@@ -17,6 +17,11 @@ nav {
   text-decoration: none;
 }
 
+.headerLinks:hover {
+  background-color: #b8d8be;
+  border-radius: 10px;
+}
+
 nav ul {
   display: flex;
   flex-direction: row;
@@ -25,10 +30,16 @@ nav ul {
   list-style-type: none;
 }
 
-.navHome {
-  background-color: #b8d8be;
-  border-radius: 10px;
+// NEW
+nav li {
+  display: flex;
+  align-items: center; /* Vertically align items within list items */
 }
+
+// .navHome {
+//   background-color: #b8d8be;
+//   border-radius: 10px;
+// }
 
 // Footer
 footer {

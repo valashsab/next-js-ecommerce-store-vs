@@ -1,6 +1,8 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
+import styles from '../globals.scss';
 
 export default function Header() {
   let cartQuantity = 0;
@@ -36,11 +38,20 @@ export default function Header() {
           </li>
           <li className="navCart">
             <Link data-test-id="cart-link" href="/cart" className="headerLinks">
-              Cart
+              <div className={styles.icon}>
+                <Image
+                  src="/images/shopping-cart.svg"
+                  alt="shopping cart icon"
+                  width={40}
+                  height={40}
+                />
+              </div>
             </Link>
           </li>
           <li>
-            <div data-test-id="cart-count">{cartQuantity}</div>
+            <div className={styles.cartQuantity} data-test-id="cart-count">
+              {cartQuantity}
+            </div>
           </li>
         </ul>
       </nav>
