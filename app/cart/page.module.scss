@@ -1,0 +1,95 @@
+.checkoutButton {
+  background-color: #b8d8be;
+  border-radius: 25px;
+  border: 1px solid;
+  padding: 10px;
+  margin-top: 15px;
+  width: 100px;
+}
+
+.continueShoppingButton {
+  background-color: #f6f1e9;
+  border-radius: 25px;
+  border: 1px solid;
+  padding: 10px;
+  margin-top: 15px;
+  width: 150px;
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.cartPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.productItem {
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.productDetails {
+  display: flex;
+  align-items: center;
+}
+
+.productColumn {
+  margin-right: 20px;
+}
+
+// .totalSum {
+//   text-align: center;
+// }
+
+.productList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%; /* Full width for the product list */
+}
+
+.product {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%; /* Full width for each product row */
+}
+
+.productColumn1 {
+  flex: 2; /* Wider column for price, subtotal, and total sum */
+}
+
+.productColumn2 {
+  flex: 2; /* Wider column for product.type, quantity, and total quantity */
+}
+
+.productColumn3 {
+  flex: 1; /* Narrower column for remove button */
+}
+
+.totalsRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 20px;
+  width: 100%; /* Full width for the totals row */
+  border: 1px solid #ccc;
+  background-color: #b8d8be;
+  border-radius: 25px;
+}
+
+.totalColumn {
+  flex: 2; /* Wider column for total quantity and total sum */
+  font-weight: bold;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+}

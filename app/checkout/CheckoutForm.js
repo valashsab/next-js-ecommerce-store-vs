@@ -19,9 +19,7 @@ export default function CheckOut() {
       <main>
         <div>
           <form onSubmit={handleSubmit} action="/submit" autoComplete="off">
-            <div className={styles.customerDetailsCheckout}>
-              Contact details
-            </div>
+            <div>Contact details</div>
             <br />
             <label className={styles.label} htmlFor="firstName">
               First name
@@ -58,10 +56,7 @@ export default function CheckOut() {
             />
             <br />
             <br />
-            <div className={styles.customerDetailsCheckout}>
-              {' '}
-              Shipping address
-            </div>
+            <div> Shipping address</div>
 
             <br />
             <label className={styles.label} htmlFor="address">
@@ -113,10 +108,7 @@ export default function CheckOut() {
             />
             <br />
             <br />
-            <div className={styles.customerDetailsCheckout}>
-              {' '}
-              Payment informations
-            </div>
+            <div> Payment informations</div>
 
             <br />
             <label className={styles.label} htmlFor="creditCard">

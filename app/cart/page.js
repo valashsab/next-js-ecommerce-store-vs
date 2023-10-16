@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { getProducts } from '../../database/products';
 import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
+import styles from './page.module.scss';
 import RemoveButton from './RemoveButton';
 
 export const metadata = {
@@ -44,60 +45,149 @@ export default async function CartPage() {
     return accumulator + product.quantity * product.price;
   }, 0);
 
+  //   return (
+  //     <div className="cartPage">
+  //       {productsWithQuantity.length > 0 ? (
+  //         // If there are products with quantity, map and display them
+  //         <div>
+  //           <h1>My cart</h1>
+  //           {productsWithQuantity.map((product) => (
+  //             <div
+  //               data-test-id={`cart-product-${product.id}`}
+  //               key={`product-div-${product.id}`}
+  //             >
+  //               <Link href={`/products/${product.id}`}>
+  //                 <li>{product.type}</li>
+  //                 <br />
+  //                 <Image
+  //                   src={`/images/${product.type}.png`}
+  //                   alt={product.type}
+  //                   width={100}
+  //                   height={100}
+  //                 />
+  //               </Link>
+  //               <br />
+  //               Quantity:
+  //               <div data-test-id={`cart-product-quantity-${product.id}`}>
+  //                 {product.quantity}
+  //               </div>
+  //               <br />
+  //               Price: {product.price}€
+  //               <br />
+  //               <br />
+  //               Subtotal: {product.quantity * product.price}€
+  //               <br />
+  //               <RemoveButton productId={product.id} />
+  //               <br />
+  //               <br />
+  //               <br />
+  //               <br />
+  //             </div>
+  //           ))}
+  //           <div data-test-id="cart-total">Total quantity: {totalQuantity}</div>
+  //           <div>Total sum (incl. tax): {totalSum}€</div>
+
+  //           <br />
+  //           <br />
+  //           <div className={styles.buttonContainer}>
+  //             <Link href="/products">
+  //               <div>
+  //                 <button className={styles.continueShoppingButton}>
+  //                   Continue shopping
+  //                 </button>
+  //               </div>
+  //             </Link>
+  //             <br />
+  //             <Link href="/checkout">
+  //               <div>
+  //                 <button
+  //                   className={styles.checkoutButton}
+  //                   data-test-id="cart-checkout"
+  //                 >
+  //                   Checkout
+  //                 </button>
+  //               </div>
+  //             </Link>
+  //           </div>
+  //         </div>
+  //       ) : (
+  //         <h1>No items in cart.</h1>
+  //       )}
+  //     </div>
+  //   );
+  // }
+
   return (
-    <div>
+    <div className={styles.cartPage}>
       {productsWithQuantity.length > 0 ? (
-        // If there are products with quantity, map and display them
         <div>
           <h1>My cart</h1>
-          {productsWithQuantity.map((product) => (
-            <div
-              data-test-id={`cart-product-${product.id}`}
-              key={`product-div-${product.id}`}
-            >
-              <Link href={`/products/${product.id}`}>
-                <li>{product.type}</li>
-                <br />
-                <Image
-                  src={`/images/${product.type}.png`}
-                  alt={product.type}
-                  width={100}
-                  height={100}
-                />
-              </Link>
-              <br />
-              Quantity:
-              <div data-test-id={`cart-product-quantity-${product.id}`}>
-                {product.quantity}
+          <div className={styles.productList}>
+            {productsWithQuantity.map((product) => (
+              <div
+                data-test-id={`cart-product-${product.id}`}
+                key={`product-div-${product.id}`}
+                className={styles.productItem}
+              >
+                <div className={styles.productDetails}>
+                  <div className={styles.productColumn}>
+                    <Link href={`/products/${product.id}`}>
+                      <Image
+                        src={`/images/${product.type}.png`}
+                        alt={product.type}
+                        width={100}
+                        height={100}
+                      />
+                    </Link>
+                  </div>
+                  <div className={styles.productColumn}>
+                    <div>Price: {product.price}€</div>
+                  </div>
+                  <div className={styles.productColumn}>
+                    <div>Quantity: {product.quantity}</div>
+                  </div>
+                  <div className={styles.productColumn}>
+                    <div>Subtotal: {product.quantity * product.price}€</div>
+                  </div>
+                  <div className={styles.productColumn}>
+                    <RemoveButton productId={product.id} />
+                  </div>
+                </div>
               </div>
-              <br />
-              Price: {product.price}€
-              <br />
-              <br />
-              Subtotal: {product.quantity * product.price}€
-              <br />
-              <RemoveButton productId={product.id} />
-              <br />
-              <br />
-              <br />
-              <br />
+            ))}
+          </div>
+          <div className={styles.totalsRow}>
+            <div className={styles.totalColumn} data-test-id="cart-total">
+              Total quantity: {totalQuantity}
             </div>
-          ))}
-          <div>Total sum (incl. tax): {totalSum}€</div>
-          <div data-test-id="cart-total">Total quantity: {totalQuantity}</div>
-          <br />
-          <br />
-          <Link href="/checkout">
-            <div>
-              <button data-test-id="cart-checkout">Checkout</button>
+            <div
+              className={styles.totalColumn}
+              // className={styles.totalSum}
+            >
+              Total sum (incl. tax): {totalSum}€
             </div>
-          </Link>
-          <br />
-          <Link href="/products">
-            <div>
-              <button>Continue shopping</button>
-            </div>
-          </Link>
+          </div>
+          <div className={styles.buttonContainer}>
+            <Link href="/products">
+              <div>
+                {' '}
+                <button className={styles.continueShoppingButton}>
+                  Continue shopping
+                </button>
+              </div>
+            </Link>
+            <Link href="/checkout">
+              <div>
+                {' '}
+                <button
+                  className={styles.checkoutButton}
+                  data-test-id="cart-checkout"
+                >
+                  Checkout
+                </button>
+              </div>
+            </Link>
+          </div>
         </div>
       ) : (
         <h1>No items in cart.</h1>

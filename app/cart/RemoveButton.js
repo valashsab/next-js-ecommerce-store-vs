@@ -1,4 +1,5 @@
 'use client';
+import styles from './RemoveButton.module.scss';
 import { removeProduct } from './removeProduct';
 
 export default function RemoveButton({ productId }) {
@@ -8,6 +9,7 @@ export default function RemoveButton({ productId }) {
   return (
     <div>
       <button
+        className={styles.removeButton}
         data-test-id={`cart-product-remove-${productId}`}
         onClick={handleRemoveProduct}
       >
