@@ -5,6 +5,7 @@ import { getProductById } from '../../../database/products';
 import { getCookie } from '../../../util/cookies';
 import { parseJson } from '../../../util/json';
 import AddToCartForm from './AddToCartForm';
+import styles from './page.module.scss';
 
 type Props = {
   params: {
@@ -34,35 +35,43 @@ export default async function SingleProductPage(props: Props) {
   console.log(productToDisplay);
 
   return (
-    <div>
+    <div className={styles.productPage}>
       <h1>{singleProduct.type}</h1>
-      <div>
-        <Image
-          data-test-id="product-image"
-          src={`/images/${singleProduct.type}.png`}
-          alt={singleProduct.type}
-          width={200}
-          height={200}
-        />
-        <ul>
+      <div className={styles.productInfoContainer}>
+        <div className={styles.productImage}>
+          <Image
+            data-test-id="product-image"
+            src={`/images/${singleProduct.type}.png`}
+            alt={singleProduct.type}
+            width={200}
+            height={200}
+          />
+        </div>
+        <ul className={styles.productDetails}>
           <li data-test-id="product-price">Price: {singleProduct.price}€</li>
           <li>Weight: {singleProduct.weight}</li>
-
-          <li>Quantity: {productToDisplay?.quantity}</li>
-          <li data-test-id="product-quantity">
-            <AddToCartForm productId={singleProduct.id} />
-          </li>
-          <Link href="/cart">
-            <div>
-              <button>Go to cart</button>
-            </div>
-          </Link>
-          <Link href="/products">
-            <div>
-              <button>Continue shopping</button>
-            </div>
-          </Link>
+          <li>DESCRIPTION</li>
         </ul>
+      </div>
+      <div className={styles.quantityInput}>
+        <li>Quantity: {productToDisplay?.quantity}</li>
+        <li data-test-id="product-quantity">
+          <AddToCartForm productId={singleProduct.id} />
+        </li>
+      </div>
+      <div className={styles.buttonContainer}>
+        <Link href="/products">
+          <div>
+            <button className={styles.continueShoppingButton}>
+              Continue shopping
+            </button>
+          </div>
+        </Link>
+        <Link href="/cart">
+          <div>
+            <button className={styles.cartButton}>Go to cart</button>
+          </div>
+        </Link>
       </div>
     </div>
   );
