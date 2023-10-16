@@ -2,6 +2,7 @@
 import { useRouter } from 'next/navigation';
 // import { useState } from 'react';
 import { deleteCookie } from './actions';
+import styles from './CheckoutForm.module.scss';
 
 export default function CheckOut() {
   const router = useRouter();
@@ -18,26 +19,37 @@ export default function CheckOut() {
       <main>
         <div>
           <form onSubmit={handleSubmit} action="/submit" autoComplete="off">
-            Contact details
+            <div className={styles.customerDetailsCheckout}>
+              Contact details
+            </div>
             <br />
-            <label htmlFor="firstName">First name</label>
+            <label className={styles.label} htmlFor="firstName">
+              First name
+            </label>
             <input
+              className={styles.input}
               data-test-id="checkout-first-name"
               id="firstName"
               name="firstName"
               required
             />
             <br />
-            <label htmlFor="lastName">Last name</label>
+            <label className={styles.label} htmlFor="lastName">
+              Last name
+            </label>
             <input
+              className={styles.input}
               data-test-id="checkout-last-name"
               id="lastName"
               name="lastName"
               required
             />
             <br />
-            <label htmlFor="email">Email</label>
+            <label className={styles.label} htmlFor="email">
+              Email
+            </label>
             <input
+              className={styles.input}
               data-test-id="checkout-email"
               type="email"
               id="email"
@@ -46,26 +58,39 @@ export default function CheckOut() {
             />
             <br />
             <br />
-            Shipping address
+            <div className={styles.customerDetailsCheckout}>
+              {' '}
+              Shipping address
+            </div>
+
             <br />
-            <label htmlFor="address">Address</label>
+            <label className={styles.label} htmlFor="address">
+              Address
+            </label>
             <input
+              className={styles.input}
               data-test-id="checkout-address"
               id="address"
               name="address"
               required
             />
             <br />
-            <label htmlFor="city">City</label>
+            <label className={styles.label} htmlFor="city">
+              City
+            </label>
             <input
+              className={styles.input}
               data-test-id="checkout-city"
               id="city"
               name="city"
               required
             />
             <br />
-            <label htmlFor="postalCode">Postal code</label>
+            <label className={styles.label} htmlFor="postalCode">
+              Postal code
+            </label>
             <input
+              className={styles.input}
               data-test-id="checkout-postal-code"
               id="postalCode"
               name="postalCode"
@@ -75,8 +100,11 @@ export default function CheckOut() {
               required
             />
             <br />
-            <label htmlFor="country">Country</label>
+            <label className={styles.label} htmlFor="country">
+              Country
+            </label>
             <input
+              className={styles.input}
               data-test-id="checkout-country"
               id="country"
               name="country"
@@ -85,10 +113,17 @@ export default function CheckOut() {
             />
             <br />
             <br />
-            Payment information
+            <div className={styles.customerDetailsCheckout}>
+              {' '}
+              Payment informations
+            </div>
+
             <br />
-            <label htmlFor="creditCard">Credit card</label>
+            <label className={styles.label} htmlFor="creditCard">
+              Credit card
+            </label>
             <input
+              className={styles.input}
               data-test-id="checkout-credit-card"
               id="creditCardNumber"
               name="creditCardNumber"
@@ -99,8 +134,11 @@ export default function CheckOut() {
               required
             />
             <br />
-            <label htmlFor="expirationDate">Expiration date</label>
+            <label className={styles.label} htmlFor="expirationDate">
+              Expiration date
+            </label>
             <input
+              className={styles.input}
               data-test-id="checkout-expiration-date"
               id="expirationDate"
               name="credit-expires"
@@ -111,8 +149,11 @@ export default function CheckOut() {
               required
             />
             <br />
-            <label htmlFor="securityCode">Security code</label>
+            <label className={styles.label} htmlFor="securityCode">
+              Security code
+            </label>
             <input
+              className={styles.input}
               data-test-id="checkout-security-code"
               id="securityCode"
               name="credit-cvc"
@@ -123,7 +164,10 @@ export default function CheckOut() {
               required
             />
             <br />
+            <br />
+
             <button
+              className={styles.confirmButton}
               data-test-id="checkout-confirm-order"
               onClick={handleSubmit}
             >

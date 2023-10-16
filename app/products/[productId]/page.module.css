@@ -1,0 +1,85 @@
+ul {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.navHome {
+  background-color: #b8d8be;
+  border-radius: 10px;
+}
+
+// Footer
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  position: fixed;
+  bottom: 0;
+}
+
+footer ul {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 20px;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+footer ul li {
+  display: flex;
+  justify-content: center;
+}
+
+.footerLinks {
+  text-decoration: none;
+}
+
+// body
+body {
+  background-color: #f6f1e9;
+  font-family: 'Dosis', sans-serif;
+  margin: 100px 100px;
+  padding: 0px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.mainImg {
+  margin: auto;
+  display: block;
+}
+
+// headings
+h1 {
+  font-size: 40px;
+  font-weight: '600';
+  color: #b8d8be;
+  display: flex;
+  justify-content: center;
+}
+
+// products page
+.listedProducts {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+// h2 {
+//   font-size: 30px;
+//   font-weight: '400';
+//   color: #b8d8be;
+// }
+
+// COLORS:
+// fabrliche mint Akzente: #b8d8be
+// background-color: #f6f1e9

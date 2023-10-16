@@ -45,8 +45,8 @@ export default async function SingleProductPage(props: Props) {
           height={200}
         />
         <ul>
-          <li data-test-id="product-price">{singleProduct.price}</li>
-          <li>{singleProduct.weight}</li>
+          <li data-test-id="product-price">Price: {singleProduct.price}€</li>
+          <li>Weight: {singleProduct.weight}</li>
 
           <li>Quantity: {productToDisplay?.quantity}</li>
           <li data-test-id="product-quantity">

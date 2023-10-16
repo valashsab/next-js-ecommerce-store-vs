@@ -71,10 +71,10 @@ export default async function CartPage() {
                 {product.quantity}
               </div>
               <br />
-              Price: {product.price}
+              Price: {product.price}€
               <br />
               <br />
-              Subtotal: {product.quantity * product.price}
+              Subtotal: {product.quantity * product.price}€
               <br />
               <RemoveButton productId={product.id} />
               <br />
@@ -83,7 +83,7 @@ export default async function CartPage() {
               <br />
             </div>
           ))}
-          <div>Total sum (incl. tax): {totalSum}</div>
+          <div>Total sum (incl. tax): {totalSum}€</div>
           <div data-test-id="cart-total">Total quantity: {totalQuantity}</div>
           <br />
           <br />

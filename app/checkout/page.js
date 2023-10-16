@@ -2,6 +2,7 @@ import { getProducts } from '../../database/products';
 import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
 import CheckoutForm from './CheckoutForm';
+import styles from './page.module.scss';
 
 export const metadata = {
   title: 'checkout',
@@ -39,9 +40,12 @@ export default async function checkoutPage() {
     <div>
       <h1>Order summary</h1>
 
-      <div>Total sum (incl. tax): {total}</div>
-
-      <h2>Shipping & payment details</h2>
+      <div className={styles.checkoutTotalSum}>
+        Total sum (incl. tax): {total}€
+      </div>
+      <br />
+      <br />
+      <h2 className={styles.h2Heading}>Shipping & payment details</h2>
       <br />
       <CheckoutForm />
     </div>

@@ -3,13 +3,19 @@ import Image from 'next/image';
 import Link from 'next/link';
 import CookieBanner from '../CookieBanner';
 import matchapowder from '../public/images/matchapowder.jpg';
+import styles from './page.module.scss';
 
 export default function Home() {
   return (
     <main>
       <h1>MATCHA</h1>
       <div className="mainImg">
-        <Image src={matchapowder} alt="matcha powder" width={500} />
+        <Image
+          classname={styles.pictureMainpage}
+          src={matchapowder}
+          alt="matcha powder"
+          width={500}
+        />
       </div>
       <section className="generalInfo">
         <p>PLACEHOLDER: General information</p>
@@ -20,7 +26,7 @@ export default function Home() {
       </section>
       <br />
       <section className="signUp">
-        <div>PLACEHOLDER: Sign up input field</div>
+        <div>Sign up input field</div>
       </section>
       <br />
       <br />
