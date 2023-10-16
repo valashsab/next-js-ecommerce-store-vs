@@ -1,7 +1,7 @@
 import './globals.scss';
 import { Inconsolata } from 'next/font/google';
-import Footer from '../Footer';
-import Header from '../Header';
+import Footer from './Footer/Footer';
+import Header from './Header/Header';
 
 const inconsolata = Inconsolata({
   weight: ['200', '400', '600'],

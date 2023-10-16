@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Inconsolata';
+  font-style: normal;
+  font-weight: 200;
+  src: url('/path-to-your-font/Inconsolata-200.woff2') format('woff2');
+}
+
 // Nav
 nav {
   display: flex;
@@ -31,6 +38,7 @@ footer {
   flex-direction: row;
   position: fixed;
   bottom: 0;
+  width: 100%;
 }
 
 footer ul {
@@ -38,7 +46,7 @@ footer ul {
   justify-content: center;
   flex-direction: row;
   gap: 20px;
-  text-decoration: none;
+  // text-decoration: none;
   list-style-type: none;
 }
 

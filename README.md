@@ -4,6 +4,11 @@
 
 Welcome to the matcha online store! This repository serves the purpose of showcasing a fully functional e-commerce store based on the knowledge and skills acquired and applied during the web development bootcamp.
 
+The sources of images and content are from the following websites:
+
+- https://matchamafia.com/
+- https://www.chanomavienna.at/
+
 Subsequently in order to extend and upgrade the matcha e-commerce-store experience the following features can be added:
 
 - Add another product group, providing an essential kit for matcha preparation for home including a ceramic bowl, whisk, whisk stand, bamboo tea ladle and a strainer.

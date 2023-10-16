@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import { getCookie } from './util/cookies';
-import { parseJson } from './util/json';
+import { getCookie } from '../../util/cookies';
+import { parseJson } from '../../util/json';
 
 export default function Header() {
   let cartQuantity = 0;
@@ -31,7 +31,7 @@ export default function Header() {
           </li>
           <li>
             <Link className="headerLinks" href="/about">
-              About us
+              About
             </Link>
           </li>
           <li className="navCart">

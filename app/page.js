@@ -17,17 +17,12 @@ export default function Home() {
           width={500}
         />
       </div>
-      <section className="generalInfo">
-        <p>PLACEHOLDER: General information</p>
-      </section>
+
       <section className="productsLink">
-        {' '}
+        <div>To get a taste of matcha, click the link below: </div>
         <Link href="/products">Products</Link>
       </section>
       <br />
-      <section className="signUp">
-        <div>Sign up input field</div>
-      </section>
       <br />
       <br />
       <CookieBanner />

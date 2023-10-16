@@ -1,26 +1,27 @@
 import Link from 'next/link';
+import styles from '../globals.scss';
 
 export default function Footer() {
   return (
-    <footer className="footer">
-      <ul className="footerList">
+    <footer>
+      <ul>
         <li>
-          <Link className="footerLinks" href="/privacypolicy">
+          <Link className={styles.footerLinks} href="/privacypolicy">
             Privacy Policy
           </Link>
         </li>
         <li>
-          <Link className="footerLinks" href="/termsandconditions">
+          <Link className={styles.footerLinks} href="/termsandconditions">
             Terms & Conditions
           </Link>
         </li>
         <li>
-          <Link className="footerLinks" href="/cookiespolicy">
+          <Link className={styles.footerLinks} href="/cookiespolicy">
             Cookies Policy
           </Link>
         </li>
         <li>
-          <Link className="footerLinks" href="/imprint">
+          <Link className={styles.footerLinks} href="/imprint">
             Imprint
           </Link>
         </li>
