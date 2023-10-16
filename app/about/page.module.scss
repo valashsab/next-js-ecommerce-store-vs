@@ -1,15 +1,68 @@
-// .matchaTable {
-// }
+.matchaTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto; /* Center the table horizontally */
+}
+
+.matchaTable th,
+.matchaTable td {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+.matchaTable th {
+  background-color: #f6f1e9; /* Light background color for table header */
+  font-weight: bold;
+}
 
 .tableContainer {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Optional: Center within the viewport */
+  margin: 20px 0;
+  overflow-x: auto; /* Add horizontal scrollbar if the table overflows */
 }
 
 .aboutSection {
-  width: 60%;
+  width: 80%; /* Increase width for better readability */
   margin: 0 auto;
+  text-align: center; /* Align text to the left for better readability */
+  border-radius: 10px;
+  border: 1px solid #b8d8be;
+}
+
+.aboutSection h2,
+.aboutSection h3 {
+  margin-top: 20px; /* Add some space between headings and content */
+}
+
+.aboutSection h3,
+.aboutSection p {
   text-align: center;
+}
+
+/* Style the bullet points in the table */
+.matchaTable ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.matchaTable ul li {
+  margin-bottom: 5px;
+}
+
+/* Style good and bad matcha cells */
+.matchaTable td:nth-child(2) {
+  background-color: #b8d8be; /* Green background for good matcha cells */
+}
+
+.matchaTable td:nth-child(3) {
+  background-color: #eaeaea; /* Gray background for bad matcha cells */
+}
+
+.aboutSection img {
+  display: block;
+  margin: 0 auto;
 }

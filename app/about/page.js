@@ -4,16 +4,18 @@ import styles from './page.module.scss';
 export default function AboutPage() {
   return (
     <div>
-      <h1>WHY MATCHA?</h1>
-      <Image
-        src="/images/why_matcha.png"
-        alt="image with icons and information about benefits of matcha"
-        width={500}
-        height={200}
-      />
-
-      <h2>Matcha = Healthy green energy</h2>
       <section className={styles.aboutSection}>
+        <h1>WHY MATCHA?</h1>
+        <Image
+          src="/images/why_matcha.png"
+          alt="image with icons and information about benefits of matcha"
+          width={500}
+          height={200}
+        />
+      </section>
+      <section className={styles.aboutSection}>
+        <h2>Matcha = Healthy green energy</h2>
+
         <h3>Need a boost? Drink matcha!</h3>
         <p>
           Drinking one cup of matcha is roughly the equivalent of drinking 10

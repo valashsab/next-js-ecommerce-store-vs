@@ -50,7 +50,7 @@ export default async function SingleProductPage(props: Props) {
         <ul className={styles.productDetails}>
           <li data-test-id="product-price">Price: {singleProduct.price}€</li>
           <li>Weight: {singleProduct.weight}</li>
-          <li>DESCRIPTION</li>
+          {/* <li>DESCRIPTION</li> */}
         </ul>
       </div>
       <div className={styles.quantityInput}>

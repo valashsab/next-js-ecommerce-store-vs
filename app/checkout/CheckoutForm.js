@@ -1,12 +1,10 @@
 'use client';
 import { useRouter } from 'next/navigation';
-// import { useState } from 'react';
 import { deleteCookie } from './actions';
 import styles from './CheckoutForm.module.scss';
 
 export default function CheckOut() {
   const router = useRouter();
-  // const [cart, setCart] = useState([]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -165,11 +163,6 @@ export default function CheckOut() {
             >
               Confirm order
             </button>
-            {/* <button
-              formAction={async () => await deleteCookie(props.productId)}
-            >
-              Confirm order
-            </button> */}
           </form>
         </div>
       </main>

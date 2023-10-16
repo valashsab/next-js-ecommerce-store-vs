@@ -160,10 +160,7 @@ export default async function CartPage() {
             <div className={styles.totalColumn} data-test-id="cart-total">
               Total quantity: {totalQuantity}
             </div>
-            <div
-              className={styles.totalColumn}
-              // className={styles.totalSum}
-            >
+            <div className={styles.totalColumn}>
               Total sum (incl. tax): {totalSum}€
             </div>
           </div>
