@@ -4,11 +4,12 @@
 
 Welcome to the matcha online store! This repository serves the purpose of showcasing a fully functional e-commerce store based on the knowledge and skills acquired and applied during the web development bootcamp.
 
-Subsequently in order to extend the matcha e-commerce-store experience the following ideas can be added:
+Subsequently in order to extend and upgrade the matcha e-commerce-store experience the following features can be added:
 
-- Add another product group, providing a matcha preparation kit for home including a ceramic bowl, whisk and a strainer.
-- Add a filter on the product page in order to be able to filter by products groups (namely: matcha powder, matcha sets)
+- Add another product group, providing an essential kit for matcha preparation for home including a ceramic bowl, whisk, whisk stand, bamboo tea ladle and a strainer.
+- Add a filter on the product page in order to be able to sort by product groups (namely: matcha powder, matcha sets)
 - Provide validation of the input fields and customized alert information.
+- Design dynamic pages.
 - Sign up for a newsletter to be informed about matcha related events in Vienna, shop discounts, matcha recipes
 
 Please take your time and browse through the web application. If you have any feedback or suggestions, please feel free to reach out to me.
