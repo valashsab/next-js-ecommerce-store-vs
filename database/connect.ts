@@ -45,11 +45,3 @@ function connectOneTimeToDatabase() {
 
 // Connect to PostgreSQL
 export const sql = connectOneTimeToDatabase();
-
-// The function is written in an optimized version in products.ts file
-// export async function getAllProductsFromDatabase() {
-//   const products = await sql`
-//   SELECT * FROM products
-//   `;
-//   return products;
-// }
