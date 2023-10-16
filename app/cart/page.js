@@ -178,7 +178,6 @@ export default async function CartPage() {
             </Link>
             <Link href="/checkout">
               <div>
-                {' '}
                 <button
                   className={styles.checkoutButton}
                   data-test-id="cart-checkout"
