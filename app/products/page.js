@@ -14,19 +14,6 @@ export const metadata = {
 export default async function ProductsPage() {
   const products = await getProducts();
 
-  // // added 03.10.23 cookies
-  // const productsCookie = getCookie('products');
-
-  // const productsInput = !productsCookie ? [] : parseJson(productsCookie);
-
-  // const productsWithQuantity = products.map((product) => {
-  //   const matchingWithProductFromCookie = productsInput.find(
-  //     (productObject) => product.id === productObject.id,
-  //   );
-
-  //   return { ...product, quantity: matchingWithProductFromCookie?.quantity };
-  // });
-
   return (
     <div>
       <h1>Matcha selection</h1>

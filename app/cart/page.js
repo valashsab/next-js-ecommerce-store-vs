@@ -145,12 +145,17 @@ export default async function CartPage() {
                     <div>Price: {product.price}€</div>
                   </div>
                   <div className={styles.productColumn}>
-                    <div>Quantity: {product.quantity}</div>
+                    <div data-test-id={`cart-product-quantity-${product.id}`}>
+                      Quantity: {product.quantity}
+                    </div>
                   </div>
                   <div className={styles.productColumn}>
                     <div>Subtotal: {product.quantity * product.price}€</div>
                   </div>
-                  <div className={styles.productColumn}>
+                  <div
+                    data-test-id={`cart-product-remove-${product.id}`}
+                    className={styles.productColumn}
+                  >
                     <RemoveButton productId={product.id} />
                   </div>
                 </div>
@@ -161,7 +166,7 @@ export default async function CartPage() {
             <div className={styles.totalColumn} data-test-id="cart-total">
               Total quantity: {totalQuantity}
             </div>
-            <div className={styles.totalColumn}>
+            <div data-test-id="cart-total" className={styles.totalColumn}>
               Total sum (incl. tax): {totalSum}€
             </div>
           </div>
