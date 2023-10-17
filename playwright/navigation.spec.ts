@@ -57,7 +57,7 @@ test('navigation test', async ({ page }) => {
   await expect(page).toHaveURL('http://localhost:3000/products');
 
   // click on random product
-  await page.getByTestId('/product-1').click();
+  await page.getByTestId('product-1').click();
   await page.waitForURL('http://localhost:3000/products/1');
   await expect(page).toHaveURL('http://localhost:3000/products/1');
 
@@ -77,7 +77,7 @@ test('navigation test', async ({ page }) => {
   await expect(page).toHaveURL('http://localhost:3000/products');
 
   // click on random product
-  await page.getByTestId('/product-2').click();
+  await page.getByTestId('product-2').click();
   await page.waitForURL('http://localhost:3000/products/2');
   await expect(page).toHaveURL('http://localhost:3000/products/2');
 
