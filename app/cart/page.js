@@ -8,7 +8,7 @@ import styles from './page.module.scss';
 import RemoveButton from './RemoveButton';
 
 export const metadata = {
-  title: 'cart',
+  title: 'Cart',
   description:
     'You are a few clicks away from a calm, energized lifestyle provided by premium matcha.',
 };

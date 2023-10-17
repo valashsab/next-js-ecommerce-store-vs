@@ -5,7 +5,7 @@ import CheckoutForm from './CheckoutForm';
 import styles from './page.module.scss';
 
 export const metadata = {
-  title: 'checkout',
+  title: 'Checkout',
   description: 'Start your matcha journey now!',
 };
 

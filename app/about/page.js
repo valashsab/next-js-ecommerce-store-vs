@@ -2,7 +2,7 @@ import Image from 'next/image';
 import styles from './page.module.scss';
 
 export const metadata = {
-  title: 'about us',
+  title: 'About us',
   description: 'Find out more about the benefits of matcha.',
 };
 

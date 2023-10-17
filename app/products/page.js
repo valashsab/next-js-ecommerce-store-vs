@@ -6,7 +6,7 @@ import { getProducts } from '../../database/products';
 // import { parseJson } from '../../util/json';
 
 export const metadata = {
-  title: 'Products page',
+  title: 'Matcha selection',
   description:
     'A diverse selection of matcha powder to create your drink & food mixed with matcha.',
 };

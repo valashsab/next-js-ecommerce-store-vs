@@ -12,7 +12,7 @@ const inconsolata = Inconsolata({
 export const metadata = {
   title: {
     default: 'Welcome to Matcha e-commerce store',
-    template: '%s Premium Matcha online',
+    // template: '%s Premium Matcha online',
   },
   description: 'Premium matcha available for purchase online',
 };
