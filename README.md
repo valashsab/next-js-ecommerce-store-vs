@@ -134,7 +134,9 @@ Change your util/config.mjs as in the lecture: exit early in production, alias V
 Change your next.config.js as in the lecture: disable linting and type checking on build, since this happens earlier in the GitHub Actions deploy workflow
 
 Add database credentials using Fly.io secrets, randomly generating the database name, username and password
-``
+
+```
+
 flyctl secrets set PGHOST=localhost PGDATABASE=upleveled$(openssl rand -hex 16) PGUSERNAME=upleveled$(openssl rand -hex 16) PGPASSWORD=$(openssl rand -base64 32)
 
 ```
@@ -147,7 +149,7 @@ flyctl secrets set <secret name>=<secret value>
 
 ```
 
-NEXT_PUBLIC_. Instead of using environment variables for this, we recommend declaring a JavaScript variable in your code because this information is not secret - it will be exposed to the browser. If you absolutely need to set a NEXT_PUBLIC_ environment variable, you can add it to your .env.production file.
+NEXT*PUBLIC*. Instead of using environment variables for this, we recommend declaring a JavaScript variable in your code because this information is not secret - it will be exposed to the browser. If you absolutely need to set a NEXT*PUBLIC* environment variable, you can add it to your .env.production file.
 
 Create a 1GB volume for the PostgreSQL database in the Bucharest region (slower region IDs: Amsterdam ams or Warsaw waw)
 
@@ -170,4 +172,3 @@ You may receive a failed to fetch an image or build from source error during dep
 Error failed to fetch an image or build from source: error building: executor failed running [/bin/sh -c yarn build]: exit code: 1
 
 Deploys may fail for a number of reasons, to find the real error message you will need to scroll up in the logs and find the first line that looks like an error.
-```
