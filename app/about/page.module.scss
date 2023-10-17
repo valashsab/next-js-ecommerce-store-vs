@@ -28,8 +28,10 @@
   width: 80%; /* Increase width for better readability */
   margin: 0 auto;
   text-align: center; /* Align text to the left for better readability */
-  border-radius: 10px;
-  border: 1px solid #b8d8be;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  padding: 10px;
+  margin-bottom: 10px;
 }
 
 .aboutSection h2,
@@ -65,4 +67,10 @@
 .aboutSection img {
   display: block;
   margin: 0 auto;
+}
+
+.contentContainer {
+  width: 400px; /* Adjust the width to match the image's width */
+  margin: 0 auto; /* Center horizontally */
+  text-align: center;
 }

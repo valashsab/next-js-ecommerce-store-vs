@@ -19,8 +19,15 @@ export default function Home() {
       </div>
 
       <section className="productsLink">
-        <div>To get a taste of matcha, click the link below: </div>
-        <Link href="/products">Products</Link>
+        <br />
+        <br />
+        <div className={styles.introProducts}>
+          To get a taste of matcha, click the link below:{' '}
+        </div>
+        <br />
+        <Link className={styles.productsLink} href="/products">
+          Products
+        </Link>
       </section>
       <br />
       <br />

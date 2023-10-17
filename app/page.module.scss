@@ -1,3 +1,22 @@
 .pictureMainpage {
   border-radius: 25px;
 }
+
+.introProducts {
+  font-size: 1.25em;
+  font-weight: lighter;
+}
+
+.productsLink {
+  border-radius: 25px;
+  padding: 10px;
+  border: 1px solid #b8d8be;
+  text-decoration: none;
+  margin-top: 20px;
+}
+
+.productsLink:hover {
+  font-size: 1.25em;
+  background-color: #b8d8be;
+  border-radius: 25px;
+}

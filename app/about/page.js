@@ -17,7 +17,7 @@ export default function AboutPage() {
         <h2>Matcha = Healthy green energy</h2>
 
         <h3>Need a boost? Drink matcha!</h3>
-        <p>
+        <p className={styles.contentContainer}>
           Drinking one cup of matcha is roughly the equivalent of drinking 10
           cups of green tea. It’s not jittery like coffee or energy drinks and
           gives you that kick you need while lasting throughout your day. It’s
@@ -38,7 +38,7 @@ export default function AboutPage() {
           width={500}
           height={300}
         />
-        <p>
+        <p className={styles.contentContainer}>
           We source our very own proprietary blend of Matcha Mafia ceremonial
           grade matcha directly from Uji, Japan, which is home to the oldest and
           most traditional matcha farms in the world. Our matcha is always made
