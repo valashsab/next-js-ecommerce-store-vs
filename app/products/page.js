@@ -28,6 +28,7 @@ export default async function ProductsPage() {
               >
                 <div>{product.type}</div>
                 <Image
+                  data-test-id="product-image"
                   src={`/images/${product.type}.png`}
                   alt={product.type}
                   width={200}
