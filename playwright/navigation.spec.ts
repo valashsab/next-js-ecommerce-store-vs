@@ -93,13 +93,22 @@ test('navigation test', async ({ page }) => {
 
   // click on remove button & check removal id product(s)
   // Assuming you have a list of products and want to remove the product with a specific ID
-  const productIDToRemove = 1;
+  // alt
+  // const productIDToRemove = 1;
+  // neu
+  const productId = 1;
 
   // Click the "Remove" button for the product you want to remove
-  await page.getByTestId(`cart-product-remove-${productIDToRemove}`).click();
+  // alt
+  // await page.getByTestId(`cart-product-remove-${productId}`).click();
+  // neu
+  await page
+    .getByTestId('cart-product-1')
+    .getByRole('button', { name: 'Remove' })
+    .click();
 
   // Check if the removed product's quantity element is not present
-  const quantitySelector = `[data-test-id="cart-product-quantity-${productIDToRemove}"]`;
+  const quantitySelector = `[data-test-id="cart-product-quantity-${productId}"]`;
 
   // Wait for the quantity element to be removed from the DOM
   await page.waitForSelector(quantitySelector, { state: 'detached' });
@@ -109,11 +118,11 @@ test('navigation test', async ({ page }) => {
 
   if (!quantityElement) {
     console.log(
-      `Product with ID ${productIDToRemove} has been removed, and its quantity is now 0`,
+      `Product with ID ${productId} has been removed, and its quantity is now 0`,
     );
   } else {
     console.error(
-      `Product with ID ${productIDToRemove} was not removed, or its quantity is not 0`,
+      `Product with ID ${productId} was not removed, or its quantity is not 0`,
     );
   }
 
