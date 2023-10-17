@@ -29,7 +29,7 @@ export default async function ProductsPage() {
 
   return (
     <div>
-      <h1>Matcha selection & sets</h1>
+      <h1>Matcha selection</h1>
 
       <span className="listedProducts">
         {products.map((product) => {

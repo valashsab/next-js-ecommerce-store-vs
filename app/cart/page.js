@@ -10,7 +10,7 @@ import RemoveButton from './RemoveButton';
 export const metadata = {
   title: 'cart',
   description:
-    'Your a few clicks away from a calm, energized lifestyle provided by premium matcha.',
+    'You are a few clicks away from a calm, energized lifestyle provided by premium matcha.',
 };
 
 export default async function CartPage() {
