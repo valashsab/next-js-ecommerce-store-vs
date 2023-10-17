@@ -10,7 +10,7 @@ export const metadata = {
   description: 'Matcha = Healthy green energy.',
 };
 
-export default function Home() {
+export default function HomePage() {
   return (
     <main>
       <h1>MATCHA</h1>

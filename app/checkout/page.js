@@ -9,7 +9,7 @@ export const metadata = {
   description: 'Start your matcha journey now!',
 };
 
-export default async function checkoutPage() {
+export default async function CheckoutPage() {
   const products = await getProducts();
 
   // cookies

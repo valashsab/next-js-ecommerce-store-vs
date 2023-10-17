@@ -24,35 +24,7 @@ export default function RootLayout(props) {
       <body className={inconsolata.className}>
         {/* <nav> */}
         <Header />
-        {/* <ul>
-            <li className="navHome">
-              <Link className="headerLinks" href="/">
-                Home
-              </Link>
-            </li>
-            <li className="navProductsAbout">
-              <Link
-                data-test-id="products-link"
-                className="headerLinks"
-                href="/products"
-              >
-                Products
-              </Link>
-            </li>
-            <li>
-              <Link className="headerLinks" href="/about">
-                About us{' '}
-              </Link>
-            </li>
-            <li className="navCart">
-              <Link className="headerLinks" href="/cart">
-                Cart
-              </Link>
-            </li>
 
-          </ul> */}
-        {/* </nav> */}
-        {/* {children} */}
         {props.children}
         <Footer />
       </body>
