@@ -30,3 +30,23 @@ Enjoy!
 - SQL is a standardized programming language used for managing and manipulating relational databases. It is designed for querying, updating, and managing data in a relational database management system (RDBMS). SQL is crucial for interacting with databases, and it is a fundamental tool for data management.
 - Playwright is an open-source automation framework for web browsers that allows developers and testers to automate interactions with web pages and web applications.
 - Jest is an open-source JavaScript testing framework. It is primarily used for testing JavaScript code, including code written in React, Vue, Angular, and other JavaScript frameworks.
+
+## Screenshots
+
+This is to give you a glimpse of the application:
+
+![Product page](/images/product_page.png)
+
+![Cart page](/images/cart_page.png)
+
+![Checkout page](/images/checkout_page.png)
+
+## Set up instructions
+
+Clone the project on your local machine (run each line individually):
+
+<script>
+  git clone <url>
+  cd <repo name>
+  pnpm('.copy-button');
+</script>
