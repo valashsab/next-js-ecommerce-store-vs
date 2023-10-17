@@ -7,6 +7,12 @@ import { parseJson } from '../../../util/json';
 import AddToCartForm from './AddToCartForm';
 import styles from './page.module.scss';
 
+export const metadata = {
+  title: '{`product.type}`',
+  description:
+    'A diverse selection of matcha powder to create your drink & food mixed with matcha.',
+};
+
 type Props = {
   params: {
     productId: string;

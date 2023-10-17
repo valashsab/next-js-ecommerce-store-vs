@@ -5,6 +5,11 @@ import CookieBanner from '../CookieBanner';
 import matchapowder from '../public/images/matchapowder.jpg';
 import styles from './page.module.scss';
 
+export const metadata = {
+  title: 'Welcome to Matcha',
+  description: 'Matcha = Healthy green energy.',
+};
+
 export default function Home() {
   return (
     <main>

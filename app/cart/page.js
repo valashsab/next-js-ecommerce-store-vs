@@ -129,6 +129,7 @@ export default async function CartPage() {
                 key={`product-div-${product.id}`}
                 className={styles.productItem}
               >
+                <div className={styles.productType}>{product.type}</div>
                 <div className={styles.productDetails}>
                   <div className={styles.productColumn}>
                     <Link href={`/products/${product.id}`}>
