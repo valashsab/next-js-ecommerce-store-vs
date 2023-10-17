@@ -23,7 +23,7 @@ export default async function ProductsPage() {
           return (
             <div key={`product-div-${product.id}`}>
               <Link
-                data-test-id={`/product-${product.id}`}
+                data-test-id={`product-${product.id}`}
                 href={`/products/${product.id}`}
               >
                 <div>{product.type}</div>
