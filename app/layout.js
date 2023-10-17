@@ -17,15 +17,16 @@ export const metadata = {
   description: 'Premium matcha available for purchase online',
 };
 
-// export default function RootLayout({ children }) {
-export default function RootLayout(props) {
+export default function RootLayout({ children }) {
+  // export default function RootLayout(props) {
   return (
     <html lang="en">
       <body className={inconsolata.className}>
         {/* <nav> */}
         <Header />
 
-        {props.children}
+        {children}
+        {/* {props.children} */}
         <Footer />
       </body>
     </html>
