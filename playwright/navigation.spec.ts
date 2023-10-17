@@ -64,12 +64,12 @@ test('navigation test', async ({ page }) => {
   // click on "add to cart" button
   await page.locator('#quantity').fill('1');
   await page.getByTestId('product-add-to-cart').click();
-  await expect(page.getByText('Quantity:')).toBeVisible();
+  await expect(page.getByText('Quantity in cart: 1')).toBeVisible();
 
   // change quantity e.g. add 2, fill in number in input field
   await page.locator('#quantity').fill('2');
   await page.getByTestId('product-add-to-cart').click();
-  await expect(page.getByText('Quantity:')).toBeVisible();
+  await expect(page.getByText('Quantity in cart: 3')).toBeVisible();
 
   // click "continue shopping" to be redirected to products page
   await page.getByRole('button', { name: 'Continue shopping' }).click();
@@ -84,7 +84,7 @@ test('navigation test', async ({ page }) => {
   // click on "add to cart" button
   await page.locator('#quantity').fill('1');
   await page.getByTestId('product-add-to-cart').click();
-  await expect(page.getByText('Quantity:')).toBeVisible();
+  await expect(page.getByText('Quantity in cart: 1')).toBeVisible();
 
   // click on checkout button
   await page.getByRole('button', { name: 'Go to cart' }).click();
@@ -116,43 +116,6 @@ test('navigation test', async ({ page }) => {
       `Product with ID ${productIDToRemove} was not removed, or its quantity is not 0`,
     );
   }
-
-  // const productID = 1;
-  // await page.getByTestId(`cart-product-remove-${productID}`).click();
-  // // Check if the product has been removed from the cart
-  // // 1. change
-  // // const productSelector = `[data-test-id="cart-product-${productID}"]`;
-  // // const productElement = await page.$(productSelector);
-  // // original
-  // const quantitySelector = `[data-test-id="cart-product-quantity-${productID}"]`;
-  // // new
-  // await page.waitForSelector(quantitySelector);
-  // const quantityElement = await page.$(quantitySelector);
-
-  // // if (!productElement) {
-  // //   console.log(`Product with ID ${productID} has been removed from the cart`);
-  // // } else {
-  // //   const quantitySelector = `[data-test-id="cart-product-quantity-${productID}"]`;
-  // //   const quantityElement = await page.$(quantitySelector);
-
-  // if (quantityElement) {
-  //   const quantityText = await quantityElement.innerText();
-  //   const quantity = parseInt(quantityText, 10);
-
-  //   if (quantity === 0) {
-  //     console.log(
-  //       `Quantity for product with ID ${productID} changed to 0 after clicking remove button`,
-  //     );
-  //   } else {
-  //     console.error(
-  //       `Quantity for product with ID ${productID} did not change to 0 after clicking remove button`,
-  //     );
-  //   }
-  // } else {
-  //   console.error(
-  //     `Quantity element not found for product with ID ${productID}`,
-  //   );
-  // }
 
   // Checkout flow, payment page, thank you page
   // click on checkout button
