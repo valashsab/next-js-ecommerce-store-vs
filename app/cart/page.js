@@ -151,7 +151,7 @@ export default async function CartPage() {
                     </div>
                   </div>
                   <div className={styles.productColumn}>
-                    <div>Subtotal: {product.quantity * product.price}</div>€
+                    Subtotal €: <div> {product.quantity * product.price}</div>
                   </div>
                   <div
                     data-test-id={`cart-product-remove-${product.id}`}
