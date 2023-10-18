@@ -16,7 +16,7 @@ export default function HomePage() {
       <h1>MATCHA</h1>
       <div className="mainImg">
         <Image
-          classname={styles.pictureMainpage}
+          className={styles.pictureMainpage}
           src={matchapowder}
           alt="matcha powder"
           width={500}
