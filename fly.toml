@@ -1,4 +1,4 @@
-app = "next-js-ecommerce-store-vs"
+app = "matchaparadise"
 primary_region = "otp"
 
 # Apps without volume: Comment out the [mounts] configuration below
