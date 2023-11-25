@@ -2,7 +2,8 @@
 const nextConfig = {
   experimental: {
     typedRoutes: true,
-    serverActions: true,
+    // serverAction with updated next.js obsolet
+    // serverActions: true,
   },
   eslint: {
     ignoreDuringBuilds: true,
