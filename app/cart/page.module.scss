@@ -43,55 +43,63 @@
 
 .productColumn {
   margin-right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
-// .totalSum {
-//   text-align: center;
-// }
+.detailLabel {
+  margin-right: 2px;
+  margin-left: 40px;
+}
 
 .productList {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  width: 100%; /* Full width for the product list */
+  width: 100%;
 }
 
 .product {
   display: flex;
   align-items: center;
   gap: 10px;
-  width: 100%; /* Full width for each product row */
+  width: 100%;
 }
 
 .productColumn1 {
-  flex: 2; /* Wider column for price, subtotal, and total sum */
+  flex: 2;
 }
 
 .productColumn2 {
-  flex: 2; /* Wider column for product.type, quantity, and total quantity */
+  flex: 2;
 }
 
 .productColumn3 {
-  flex: 1; /* Narrower column for remove button */
+  flex: 1;
 }
 
 .totalsRow {
   display: flex;
-  flex-direction: row;
+  align-items: center;
   justify-content: space-between;
   margin-top: 20px;
-  width: 100%; /* Full width for the totals row */
+  width: 100%;
   border: 1px solid #ccc;
   background-color: #b8d8be;
   border-radius: 25px;
 }
 
 .totalColumn {
-  flex: 2; /* Wider column for total quantity and total sum */
   font-weight: bold;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 25px;
+}
+
+.currencySymbol {
+  margin-left: 1px;
+  margin-right: 40px;
 }
 
 .productType {
@@ -99,4 +107,14 @@
   text-align: left;
   padding-left: 25px;
   text-decoration: none;
+}
+
+.totalQuantityContainer {
+  display: flex;
+  align-items: center;
+}
+
+.totalSumContainer {
+  display: flex;
+  align-items: center;
 }

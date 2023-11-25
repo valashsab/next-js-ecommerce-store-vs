@@ -70,17 +70,27 @@ export default async function CartPage() {
                     </Link>
                   </div>
                   <div className={styles.productColumn}>
-                    Price:<div>{product.price}</div>€
+                    <span className={styles.detailLabel}>Price:</span>
+                    <div>
+                      {product.price}
+                      <span className={styles.currencySymbol}>€</span>
+                    </div>
                   </div>
                   <div className={styles.productColumn}>
-                    Quantity:{' '}
+                    {' '}
+                    <span className={styles.detailLabel}>Quantity:</span>
                     <div data-test-id={`cart-product-quantity-${product.id}`}>
                       {product.quantity}
                     </div>
                   </div>
                   <div className={styles.productColumn}>
-                    <div>Subtotal: {product.price * product.quantity}€</div>
+                    <span className={styles.detailLabel}>Subtotal:</span>
+                    <div>
+                      {product.price * product.quantity}
+                      <span className={styles.currencySymbol}>€</span>
+                    </div>
                   </div>
+
                   <div
                     data-test-id={`cart-product-remove-${product.id}`}
                     className={styles.productColumn}
@@ -92,14 +102,24 @@ export default async function CartPage() {
             ))}
           </div>
           <div className={styles.totalsRow}>
-            Total quantity:
-            <div className={styles.totalColumn}>{totalQuantity}</div>
-            Total sum (incl. tax):{' '}
-            <div data-test-id="cart-total" className={styles.totalColumn}>
+            <span className={styles.detailLabel}>Total quantity:</span>
+            <div className={styles.totalQuantityContainer}>
+              <div className={styles.totalColumn}>{totalQuantity}</div>{' '}
+            </div>
+            {/* Total sum (incl. tax):{' '} */}
+            <span className={styles.detailLabel}>Total sum (incl. tax):</span>
+            {/* <div data-test-id="cart-total" className={styles.totalColumn}>
               {totalSum}
             </div>
-            €
+            € */}
+            <div className={styles.totalSumContainer}>
+              <div data-test-id="cart-total" className={styles.totalColumn}>
+                {totalSum}
+              </div>
+              <span className={styles.currencySymbol}>€</span>
+            </div>
           </div>
+
           <div className={styles.buttonContainer}>
             <Link href="/products">
               <div>
