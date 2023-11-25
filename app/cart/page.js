@@ -45,78 +45,6 @@ export default async function CartPage() {
     return accumulator + product.quantity * product.price;
   }, 0);
 
-  //   return (
-  //     <div className="cartPage">
-  //       {productsWithQuantity.length > 0 ? (
-  //         // If there are products with quantity, map and display them
-  //         <div>
-  //           <h1>My cart</h1>
-  //           {productsWithQuantity.map((product) => (
-  //             <div
-  //               data-test-id={`cart-product-${product.id}`}
-  //               key={`product-div-${product.id}`}
-  //             >
-  //               <Link href={`/products/${product.id}`}>
-  //                 <li>{product.type}</li>
-  //                 <br />
-  //                 <Image
-  //                   src={`/images/${product.type}.png`}
-  //                   alt={product.type}
-  //                   width={100}
-  //                   height={100}
-  //                 />
-  //               </Link>
-  //               <br />
-  //               Quantity:
-  //               <div data-test-id={`cart-product-quantity-${product.id}`}>
-  //                 {product.quantity}
-  //               </div>
-  //               <br />
-  //               Price: {product.price}€
-  //               <br />
-  //               <br />
-  //               Subtotal: {product.quantity * product.price}€
-  //               <br />
-  //               <RemoveButton productId={product.id} />
-  //               <br />
-  //               <br />
-  //               <br />
-  //               <br />
-  //             </div>
-  //           ))}
-  //           <div data-test-id="cart-total">Total quantity: {totalQuantity}</div>
-  //           <div>Total sum (incl. tax): {totalSum}€</div>
-
-  //           <br />
-  //           <br />
-  //           <div className={styles.buttonContainer}>
-  //             <Link href="/products">
-  //               <div>
-  //                 <button className={styles.continueShoppingButton}>
-  //                   Continue shopping
-  //                 </button>
-  //               </div>
-  //             </Link>
-  //             <br />
-  //             <Link href="/checkout">
-  //               <div>
-  //                 <button
-  //                   className={styles.checkoutButton}
-  //                   data-test-id="cart-checkout"
-  //                 >
-  //                   Checkout
-  //                 </button>
-  //               </div>
-  //             </Link>
-  //           </div>
-  //         </div>
-  //       ) : (
-  //         <h1>No items in cart.</h1>
-  //       )}
-  //     </div>
-  //   );
-  // }
-
   return (
     <div className={styles.cartPage}>
       {productsWithQuantity.length > 0 ? (
@@ -151,7 +79,7 @@ export default async function CartPage() {
                     </div>
                   </div>
                   <div className={styles.productColumn}>
-                    Subtotal:<div>{product.price * product.quantity}</div>€
+                    <div>Subtotal: {product.price * product.quantity}€</div>
                   </div>
                   <div
                     data-test-id={`cart-product-remove-${product.id}`}
