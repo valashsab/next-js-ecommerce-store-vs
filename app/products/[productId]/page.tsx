@@ -54,8 +54,18 @@ export default async function SingleProductPage(props: Props) {
           />
         </div>
         <ul className={styles.productDetails}>
-          Price:<li data-test-id="product-price">{singleProduct.price}</li>€
-          <li>Weight: {singleProduct.weight}</li>
+          <div className={styles.priceContainer}>
+            <span className={styles.priceLabel}>Price:</span>
+            <li data-test-id="product-price" className={styles.productPrice}>
+              {singleProduct.price}
+            </li>
+            <span>€</span>
+          </div>
+          {/* <li>Weight: {singleProduct.weight}</li> */}
+          <li className={styles.productDetailItem}>
+            <span className={styles.detailLabel}>Weight:</span>
+            <span>{singleProduct.weight}</span>
+          </li>
           {/* <li>DESCRIPTION</li> */}
         </ul>
       </div>

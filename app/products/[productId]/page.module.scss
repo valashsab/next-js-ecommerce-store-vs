@@ -47,6 +47,31 @@
   list-style: none;
   flex: 1;
   margin-top: 35px;
+
+  .priceContainer {
+    display: flex;
+    align-items: baseline; /* from center to baseline */
+    margin-left: 8px;
+  }
+
+  .priceLabel {
+    margin-right: 25px; /* Adjust the margin for spacing */
+  }
+
+  .productPrice {
+    vertical-align: baseline; /* Align the price element at the baseline */
+    margin-top: 2px; /* Adjust the margin as needed to align visually */
+  }
+  .productDetailItem {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px; /* Adjust as needed for spacing between items */
+  }
+
+  .detailLabel {
+    margin-right: 10px;
+    min-width: 70px; /* Adjust the minimum width for consistent alignment */
+  }
 }
 
 .productDetails ul {
