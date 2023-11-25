@@ -142,15 +142,16 @@ export default async function CartPage() {
                     </Link>
                   </div>
                   <div className={styles.productColumn}>
-                    <div>Price: {product.price}€</div>
+                    Price:<div>{product.price}</div>€
                   </div>
                   <div className={styles.productColumn}>
+                    Quantity:{' '}
                     <div data-test-id={`cart-product-quantity-${product.id}`}>
-                      Quantity: {product.quantity}
+                      {product.quantity}
                     </div>
                   </div>
                   <div className={styles.productColumn}>
-                    <div>Subtotal: {product.price * product.quantity}€</div>
+                    Subtotal:<div>{product.price * product.quantity}</div>€
                   </div>
                   <div
                     data-test-id={`cart-product-remove-${product.id}`}
@@ -163,9 +164,8 @@ export default async function CartPage() {
             ))}
           </div>
           <div className={styles.totalsRow}>
-            <div className={styles.totalColumn}>
-              Total quantity: {totalQuantity}
-            </div>
+            Total quantity:
+            <div className={styles.totalColumn}>{totalQuantity}</div>
             Total sum (incl. tax):{' '}
             <div data-test-id="cart-total" className={styles.totalColumn}>
               {totalSum}
